@@ -1,0 +1,26 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-image: url(./Imagens/wallpapersden.com_fortnite-ferrari-296-gtb_1920x1080.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header{
+    background-color: black;
+}
+
+a{
+    padding: 40px;
+    font-size: 30px;
+    float: right;
+}
+
+nav a{
+    text-decoration: none;
+    color: aliceblue;
+}
+

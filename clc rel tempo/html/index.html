@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculadora.css">
+    <link rel="stylesheet" href="../css/previsão.css">
+    <link rel="stylesheet" href="../css/relogio.css">
+    <title>Relógio Calculadora e Previsão do tempo</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="">História</a>
+                <a href="">Home</a>
+            </ul>
+        </nav>
+    </header>
+
+  
+        <main>  
+            <div class="caixa-maior">
+
+                <input class="input-cidade" placeholder="Digite o nome da cidade">
+                <button onclick="cliqueiNoBotao()">
+                    <img class="lupa" src="https://www.svgrepo.com/show/488200/find.svg">
+                </button>
+    
+                <div class="caixa-media">
+                    <h2 class="cidade">Tempo em Rio de Janeiro</h2>
+                    <p class="temp">28°C</p>
+    
+                    <img class="icone" src="https://openweathermap.org/img/wn/04n.png">
+    
+                    <p class="umidade">Umidade: 70%</p>
+                </div>
+    
+            </div>
+        </main>
+
+        <aside>
+            <div class="calculator">
+                <div class="result">0</div>
+                <div class="buttons">
+                  <button class="bg-gray">C</button>
+                  <button class="bg-gray">±</button>
+                  <button class="bg-gray">%</button>
+                  <button class="bg-orange">÷</button>
+          
+                  <button class="bg-light-gray">7</button>
+                  <button class="bg-light-gray">8</button>
+                  <button class="bg-light-gray">9</button>
+                  <button class="bg-orange">×</button>
+          
+                  <button class="bg-light-gray">4</button>
+                  <button class="bg-light-gray">5</button>
+                  <button class="bg-light-gray">6</button>
+                  <button class="bg-orange">-</button>
+          
+                  <button class="bg-light-gray">1</button>
+                  <button class="bg-light-gray">2</button>
+                  <button class="bg-light-gray">3</button>
+                  <button class="bg-orange">+</button>
+          
+                  <button class="bg-light-gray button-zero">0</button>
+                  <button class="bg-light-gray">,</button>
+                  <button class="bg-orange">=</button>
+                </div>
+              </div>
+          
+        </aside>
+    
+    
+    <footer> 
+        <div class="clock">
+            <span id="hours">00</span>
+            <span id="minutes">00</span>
+            <span id="seconds">00</span>
+        </div>
+    </footer>
+
+<script src="../js/relogio.js"></script>
+<script src="../js/previsão.js"></script>
+<script src="../js/calculadora.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(./Imagens/mountains-190055_1920.jpg);
+    background-repeat: no-repeat;
+    background-color: black; 
+}
+
+
+
+.textao {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 20px;
+    padding-top: 75%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 40px;
+}
+
+
+.imagens img {
+    margin-right: 10px;
+    width: 500px;
+    height: 300px;
+    margin: 25px;
+}
+
+
+.image1 img {
+    border: 3px solid purple;
+}
+
+.image2 img {
+    border: 3px solid green;
+}
+
+.image3 img {
+    border: 3px solid blue;
+}
+
+.imagens{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.i1{
+    color: white;
+    font-size: 20px;
+    padding-left: 25px;
+}
+
+.i2{
+    color: white;
+    font-size: 20px;
+    padding-left: 17px;
+}
+
+.i3{
+    color: white;
+    font-size: 20px;
+    padding-left: 25px;
+}

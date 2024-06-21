@@ -1,0 +1,295 @@
+/*Google Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700 ;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400; 0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Scribble&family=Tac+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,50 0;1.700&display= trocar');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --main-color: #ff2c1f;
+    --text-color: #020307;
+    --bg-color: #fff;
+}
+
+body{
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+
+/*CABEÇALHO*/
+.header{
+   position: fixed;
+   justify-content: center;
+   padding: 0px 100px;
+   top: 0;
+   right: 0;
+   z-index: 1000;
+   width: 100%;
+   display: flex;
+   transition: top 0.5s;
+   align-items: center;
+}
+
+/*MENU DE NAVEGAÇÃO*/
+
+.navbar{
+    display: flex;
+    column-gap: 5rem;
+    text-align: center;
+    padding: 0;
+}
+
+.navbar li{
+    position: relative;
+}
+
+.navbar a{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(32, 219, 57);
+}
+
+.navbar a::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--main-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.4s all linear;   
+}
+
+.navbar a:hover::after{
+    width: 100%;
+}
+
+/*PRIMEIRA IMAGEM DE FUNDO MARVEL*/
+.inicio{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.inicio img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+}
+
+section#imgnos{
+    background-image: url(../imagens/Design\ sem\ nome\ \(24\).png);
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/*SOBRE NOS PARALAX*/
+.sobre{
+    padding-top: 60px;
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+    font-weight: 500;
+    border-bottom: 2px solid var(--text-color);
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.253);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1700px;
+    margin: 0 auto;
+    margin-top: 30px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.txsec {
+    color: #fff;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.tnos {
+    padding-top:20px;
+    color: #fff;
+    font-size: 23px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 0px black;
+}
+
+.tucm{
+    padding-left: 30px;
+    padding-top: 30px;
+    font-size: px;
+}
+
+/*Sagas*/
+
+
+
+body{
+    background-color: #020307 ;
+}
+
+.Saga{
+   max-height: 9000px;
+   background-color: #191919;
+}
+
+.saga{
+    display: flex;
+    background-position: center;
+    padding-left: 80px;
+    padding-top: 60px;
+
+}
+
+span{
+    color: red;
+    font-size: 60px;
+}
+
+.container-sagas{
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+p{
+    font-size: 20px;
+}
+
+li{
+    padding-left: 10px;
+    padding-top: 40px;
+    font-size: 25px;
+}
+
+.t1{
+    padding-left: 5px;
+    font-size: 17px;
+}
+
+.sg{
+    display: inline-block;
+    width: 48%;
+    margin: 5px;
+    padding: 15px;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    background-color: black;
+}
+
+.sg:hover{
+    transition: transform 0.3s ease;
+    transform: translateY(-10px);
+}
+
+.sg li{
+    font-weight: bold;
+}
+
+.sg p{
+    margin-top: 10px;
+}
+
+/*Filmes*/
+
+.filmes-container{
+    max-width: 968px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,auto));
+    gap: 1rem;
+    margin-top: 2rem;
+    
+}
+
+.box .boximg{
+    width: 100%;
+    height: 270px;
+}
+
+.box .boximg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box .boximg img:hover{
+    transform: translateY(-10px);
+    transition: 0.2s all linear;
+}
+
+.UCM{
+    padding-top: 30px;
+}
+
+
+
+/*Servicos*/
+.Serviços{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    background-color: #191919;
+    height: 400px;
+}
+
+.serviços{
+    text-align: center;
+}
+
+.servc{
+    text-align: center;
+}
+
+
+/*RODA PE*/
+
+footer{
+    height: 400px;
+    text-align: center;
+    align-items: center;
+    padding-top: 50px;
+    background-color: black;
+}
+
+.socialicons{
+    height: 50px;
+    z-index: 5000;
+}
+
+.redes{
+    display: block;
+    height: 50px;
+}
+
+.rede img{
+    height: 20px;
+}
+
+.social{
+    font-size: 30px;
+}

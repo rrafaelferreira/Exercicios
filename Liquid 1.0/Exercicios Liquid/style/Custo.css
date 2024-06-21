@@ -1,0 +1,126 @@
+body{
+    height: 573px;
+    width: 1580px;
+  }
+  
+  h1{
+    text-indent: 20px;
+    color: blue;
+    background-color: blue;
+    font-size: 60px;
+    height: 10px;
+    width: 1885px;
+    margin: -110px 90px 20px 0px;
+  }
+
+  .background{
+    height: 000px;
+    width: 0000px;
+  }
+  
+  .p1{
+  text-indent: 20px;
+  font-size: 25px;
+  margin: 10px;
+  color: black;
+  margin: 0px;
+  padding: -40px 5px 7px 0px;
+}
+  
+  .p2{
+  text-indent: 20px;
+  font-size: 25px;
+  margin: 10px;
+  color: black;
+  margin: 0px;
+  padding: 0px 5px 7px 0px;
+}
+  
+  .p3{
+  text-indent: 20px;
+  font-size: 25px;
+  margin: 10px;
+  color: black;
+  margin: 0px;
+  padding: 0px 5px 7px 0px;
+}
+
+  .p4{
+  text-indent: 20px;
+  font-size: 25px;
+  margin: 10px;
+  color: black;
+  margin: 0px;
+  padding: 0px 5px 20px 0px;
+}
+
+h2{
+  background-color: blue;
+  width: 1830px;
+  height: 10px;
+  color: blue;
+  font-size: 65px;
+  text-indent: 20px;
+  margin: 0px 0px 70px 0px;
+  
+}
+
+  .p5{
+    text-indent: 20px;
+    font-size: 25px;
+    margin: 10px;
+    color: black;
+    margin: 0px;
+    padding: 0px 5px 7px 0px;
+  }
+
+  .players li {
+    list-style: none;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 169px;
+}
+
+  li{
+    display: list-item;
+    text-align: -webkit-match-parent;
+ }
+
+ .playersBgHelper {
+  text-align: center;
+  }
+
+ .players {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+ }
+
+.logo{
+  height: 650px;
+  width: 600px;
+}
+
+  table{
+    border-collapse: collapse;
+    width: 900px;
+    height: 50px;
+    font-size: 20px;
+    color: black;
+    padding: 3px;
+  }
+
+  td{
+    border: 1psolid blue;
+  }
+
+  .p6{
+    color: blue;
+    font-size: 23px;
+  }
+
+ p::selection{
+  background-color: cyan;
+  color: black;
+}
