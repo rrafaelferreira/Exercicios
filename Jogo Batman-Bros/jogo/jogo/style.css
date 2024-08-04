@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board{
+    width: 100%;
+    height: 100%;
+    border-bottom: 10px solid black;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to top, #87CEFA, #00BFFF, #4682B4, #000080, #000000);
+    background-size: 100% 100%;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: white;
+    z-index: 10;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.fundo{
+    background-repeat: repeat;
+    position: center;
+    height: 630px;
+    width: 100%;
+    align-items: center;
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+    height: 120px;
+    width: 160px;
+}
+
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump{
+    animation: jump 500ms ease-out;
+}
+
+.nuvem{
+    position: absolute;
+    padding-top: 40px;
+    width: 250px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes pipe-animation{
+    from{
+        right: 0;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes jump{
+    0% {
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 180px;
+    }
+
+    50%{
+        bottom: 180px;
+    }
+
+    60%{
+        bottom: 180px;
+    }
+
+    100%{
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation{
+    from{
+        right: 0;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+.star {
+    position: absolute;
+    width: 30px;
+    animation: star-animation 5s infinite linear;
+    /* Coloque a estrela em uma posição aleatória e com uma animação */
+}
+
+/* Adicione uma animação de movimento para as estrelas */
+@keyframes star-animation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100vh); /* Move a estrela para baixo */
+    }
+}
