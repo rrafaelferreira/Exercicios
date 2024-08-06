@@ -9,6 +9,11 @@ document.getElementById('start-button').addEventListener('click', function() {
 function startGame() {
     const mario = document.querySelector('.mario');
     const pipe = document.querySelector('.pipe');
+    const nuvem = document.querySelector('.nuvem');
+
+    // Remove a classe 'paused' para iniciar as animações
+    pipe.classList.remove('paused');
+    nuvem.classList.remove('paused');
 
     const jump = () => {
         mario.classList.add('jump');
@@ -39,3 +44,11 @@ function startGame() {
 
     document.addEventListener('keydown', jump);
 }
+
+// Inicialmente, adicionar a classe 'paused' aos elementos animados
+document.addEventListener('DOMContentLoaded', function() {
+    const pipe = document.querySelector('.pipe');
+    const nuvem = document.querySelector('.nuvem');
+    pipe.classList.add('paused');
+    nuvem.classList.add('paused');
+});
