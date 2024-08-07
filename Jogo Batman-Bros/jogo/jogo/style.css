@@ -1,216 +1,49 @@
-/**{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.game-board{
-    width: 100%;
-    height: 100%;
-    border-bottom: 10px solid black;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(to top, #87CEFA, #00BFFF, #4682B4, #000080, #000000);
-    background-size: 100% 100%;
-}
-
-.score {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 24px;
-    color: white;
-    z-index: 10;
-    font-family: 'Arial', sans-serif;
-}
-
-
-.fundo{
-    background-repeat: repeat;
-    position: center;
-    height: 630px;
-    width: 100%;
-    align-items: center;
-}
-
-.pipe{
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
-    height: 120px;
-    width: 160px;
-}
-
-.mario{
-    width: 150px;
-    position: absolute;
-    bottom: 0;
-}
-
-.jump{
-    animation: jump 500ms ease-out;
-}
-
-.nuvem{
-    position: absolute;
-    padding-top: 40px;
-    width: 250px;
-    animation: clouds-animation 20s infinite linear;
-}
-
-@keyframes pipe-animation{
-    from{
-        right: 0;
-    }
-
-    to{
-        right: 100%;
-    }
-}
-
-@keyframes jump{
-    0% {
-        bottom: 0;
-    }
-
-    40%{
-        bottom: 180px;
-    }
-
-    50%{
-        bottom: 180px;
-    }
-
-    60%{
-        bottom: 180px;
-    }
-
-    100%{
-        bottom: 0;
-    }
-}
-
-@keyframes clouds-animation{
-    from{
-        right: 0;
-    }
-
-    to{
-        right: 100%;
-    }
-}
-
-.star {
-    position: absolute;
-    width: 30px;
-    animation: star-animation 5s infinite linear;
-    /* Coloque a estrela em uma posição aleatória e com uma animação 
-}*/
-
-/* Adicione uma animação de movimento para as estrelas */
-/*@keyframes star-animation {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(100vh); /* Move a estrela para baixo *
-    }
-}
-*/
-
-
-
-/* Botão de Iniciar o jogo */ 
-/*.button {
-    --color: #00A97F;
-    padding: 0.8em 1.7em;
-    background-color: transparent;
-    border-radius: .3em;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: .5s;
-    font-weight: 400;
-    font-size: 17px;
-    border: 1px solid;
-    font-family: inherit;
-    text-transform: uppercase;
-    color: var(--color);
-    z-index: 1;
-   }
-   
-   .button::before, .button::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 50px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    border-radius: 50%;
-    z-index: -1;
-    background-color: var(--color);
-    transition: 1s ease;
-   }
-   
-   .button::before {
-    top: -1em;
-    left: -1em;
-   }
-   
-   .button::after {
-    left: calc(100% + 1em);
-    top: calc(100% + 1em);
-   }
-   
-   .button:hover::before, .button:hover::after {
-    height: 410px;
-    width: 410px;
-   }
-   
-   .button:hover {
-    color: rgb(10, 25, 30);
-   }
-   
-   .button:active {
-    filter: brightness(.8);
-   }
-   */
-
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    border: none;
 }
 
 .game-board {
     width: 100%;
-    height: 100%;
-    border-bottom: 10px solid black;
     margin: 0 auto;
+    height: 100vh;
+    border-bottom: 45px solid #353635;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(to top, #87CEFA, #00BFFF, #4682B4, #000080, #000000);
-    background-size: 100% 100%;
+    background: linear-gradient(#1c91f8, #91f0fb);
 }
 
-.score {
+.start-game {
+    width: 50%;
     position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 24px;
-    color: white;
-    z-index: 10;
-    font-family: 'Arial', sans-serif;
+    top: 10%;
+    left: 25%;
+    z-index: 1000;
 }
 
-.fundo {
+.clouds {
+    position: absolute;
+    width: 500px;
+    margin-top: 10px;
+    animation: clouds-animation 20s linear infinite;
+}
+
+.fundo{
+    animation: scrollBackground 10s linear infinite;
+    position: absolute;
     background-repeat: repeat;
-    position: center;
-    height: 630px;
-    width: 100%;
-    align-items: center;
+}
+
+.mario {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+}
+
+.jump {
+    animation: mario-jump 600ms ease-out;
 }
 
 .pipe {
@@ -218,136 +51,61 @@
     bottom: 0;
     width: 80px;
     animation: pipe-animation 1.5s infinite linear;
-    height: 120px;
-    width: 160px;
 }
 
-.mario {
-    width: 150px;
+.audio {
     position: absolute;
-    bottom: 0;
+    right: 0;
+    margin: auto;
 }
 
-.jump {
-    animation: jump 500ms ease-out;
-}
-
-.nuvem {
-    position: absolute;
-    padding-top: 40px;
-    width: 250px;
-    animation: clouds-animation 20s infinite linear;
-}
-
-@keyframes pipe-animation {
+@keyframes clouds-animation {
     from {
-        right: 0;
+        right: -550px;
     }
+
     to {
         right: 100%;
     }
 }
 
-@keyframes jump {
+@keyframes mario-jump {
     0% {
         bottom: 0;
     }
+
     40% {
         bottom: 180px;
     }
+
     50% {
         bottom: 180px;
     }
+
     60% {
         bottom: 180px;
     }
+
     100% {
         bottom: 0;
     }
 }
 
-@keyframes clouds-animation {
+@keyframes pipe-animation {
     from {
-        right: 0;
+        right: -80px;
     }
+
     to {
         right: 100%;
     }
 }
 
-.star {
-    position: absolute;
-    width: 30px;
-    animation: star-animation 5s infinite linear;
-    /* Coloque a estrela em uma posição aleatória e com uma animação */
-}
-
-/* Adicione uma animação de movimento para as estrelas */
-@keyframes star-animation {
+@keyframes scrollBackground {
     from {
-        transform: translateY(0);
+        transform: translateX(0);
     }
     to {
-        transform: translateY(100vh); /* Move a estrela para baixo */
+        transform: translateX(-50%);
     }
-}
-
-/* Botão de Iniciar o jogo */
-.button {
-    --color: #00A97F;
-    padding: 0.8em 1.7em;
-    background-color: black;
-    border-radius: .3em;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: .5s;
-    font-weight: 400;
-    font-size: 17px;
-    border: 1px solid;
-    font-family: inherit;
-    text-transform: uppercase;
-    color: var(--color);
-    z-index: 1;
-}
-
-.button::before, .button::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 50px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    border-radius: 50%;
-    z-index: -1;
-    background-color: var(--color);
-    transition: 1s ease;
-}
-
-.button::before {
-    top: -1em;
-    left: -1em;
-}
-
-.button::after {
-    left: calc(100% + 1em);
-    top: calc(100% + 1em);
-}
-
-.button:hover::before, .button:hover::after {
-    height: 410px;
-    width: 410px;
-}
-
-.button:hover {
-    color: rgb(10, 25, 30);
-}
-
-.button:active {
-    filter: brightness(.8);
-}
-
-/* Classe para pausar animações */
-.paused {
-    animation-play-state: paused !important;
 }
