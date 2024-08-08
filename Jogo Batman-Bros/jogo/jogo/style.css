@@ -15,10 +15,28 @@
     background: linear-gradient(#1c91f8, #91f0fb);
 }
 
+.fundo-container{
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+}
+
 .start-game {
     width: 50%;
     position: absolute;
     top: 10%;
+    left: 25%;
+    z-index: 1000;
+}
+
+.game-over{
+    width: 50%;
+    position: absolute;
+    top: 50%;
     left: 25%;
     z-index: 1000;
 }
@@ -31,10 +49,12 @@
 }
 
 .fundo{
-    animation: scrollBackground 10s linear infinite;
-    position: absolute;
-    background-repeat: repeat;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    animation: scrollBackground 20s linear infinite;
 }
+
 
 .mario {
     position: absolute;
@@ -108,4 +128,8 @@
     to {
         transform: translateX(-50%);
     }
+}
+
+.hidden{
+    display: none;
 }
