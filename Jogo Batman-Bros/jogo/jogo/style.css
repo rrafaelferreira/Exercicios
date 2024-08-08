@@ -9,7 +9,8 @@
     width: 100%;
     margin: 0 auto;
     height: 100vh;
-    border-bottom: 45px solid #353635;
+   /* border-bottom: 45px solid #353635;*/
+   border-bottom: 45px solid black;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#1c91f8, #91f0fb);
@@ -36,7 +37,7 @@
 .game-over{
     width: 50%;
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 25%;
     z-index: 1000;
 }
@@ -52,14 +53,15 @@
     width: 50%;
     height: 100%;
     background-size: cover;
-    animation: scrollBackground 20s linear infinite;
+    animation: scrollBackground 45s linear infinite;
 }
-
 
 .mario {
     position: absolute;
     bottom: 0;
-    width: 150px;
+    width: 160px;
+    left: 90px;
+    height: 130px;
 }
 
 .jump {
@@ -69,14 +71,25 @@
 .pipe {
     position: absolute;
     bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    width: 80px; 
+    background-size: cover;
 }
 
-.audio {
+.tempo {
     position: absolute;
-    right: 0;
-    margin: auto;
+    font-size: 20px;
+    color: white;
+    z-index: 1000;
+    background-color: rgba(53, 54, 53, 0.9); /* Fundo escuro com transparência */
+    left: 40px;
+    top: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100px;
+}
+
+.time, .besttime {
+    margin: 5px 0; /* Espaçamento entre as linhas */
 }
 
 @keyframes clouds-animation {
@@ -95,15 +108,15 @@
     }
 
     40% {
-        bottom: 180px;
+        bottom: 220px;
     }
 
     50% {
-        bottom: 180px;
+        bottom: 220px;
     }
 
     60% {
-        bottom: 180px;
+        bottom: 220px;
     }
 
     100% {
@@ -111,13 +124,23 @@
     }
 }
 
-@keyframes pipe-animation {
+/*@keyframes pipe-animation {
     from {
         right: -80px;
     }
 
     to {
         right: 100%;
+    }
+}*/
+
+
+@keyframes pipe-animation{
+    from{
+        transform: translateX(100vw);
+    }
+    to{
+        transform: translateX(-100vw);
     }
 }
 
@@ -130,6 +153,6 @@
     }
 }
 
-.hidden{
+.hidden {
     display: none;
 }
