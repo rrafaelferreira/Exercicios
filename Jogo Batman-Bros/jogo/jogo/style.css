@@ -24,6 +24,15 @@
     left: 0;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
+    background-image: url(./imagens/Arkamcidade\ \(4\).png );
+    animation: scrollBackground 45s linear infinite;
+}
+
+.fundo {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
 }
 
 .start-game {
@@ -47,13 +56,6 @@
     width: 500px;
     margin-top: 10px;
     animation: clouds-animation 20s linear infinite;
-}
-
-.fundo{
-    width: 50%;
-    height: 100%;
-    background-size: cover;
-    animation: scrollBackground 45s linear infinite;
 }
 
 .mario {
@@ -108,15 +110,15 @@
     }
 
     40% {
-        bottom: 220px;
+        bottom: 210px;
     }
 
     50% {
-        bottom: 220px;
+        bottom: 210px;
     }
 
     60% {
-        bottom: 220px;
+        bottom: 210px;
     }
 
     100% {
@@ -145,10 +147,10 @@
 }
 
 @keyframes scrollBackground {
-    from {
+    0% {
         transform: translateX(0);
     }
-    to {
+    100% {
         transform: translateX(-50%);
     }
 }
