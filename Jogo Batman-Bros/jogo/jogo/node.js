@@ -1,939 +1,97 @@
-/*const mario = document.querySelector('.mario');
-const pipe = document.querySelector('.pipe');
-const startGame = document.querySelector('.start-game');
-const gameOver = document.querySelector('.game-over');
-const timeDisplay = document.querySelector('.time');
-const bestTimeDisplay = document.querySelector('.besttime');
+// Seleciona os elementos do DOM
+const mario = document.querySelector('.mario'); // Elemento do Mario
+const pipe = document.querySelector('.pipe'); // Elemento do pipe
+const startGame = document.querySelector('.start-game'); // Elemento da tela inicial
+const gameOver = document.querySelector('.game-over'); // Elemento da tela de game over
+const timeDisplay = document.querySelector('.time'); // Elemento para exibir o tempo atual
+const bestTimeDisplay = document.querySelector('.besttime'); // Elemento para exibir o melhor tempo
 
-let gameLoop;
-let startTime;
-let elapsedTime = 0;
-let bestTime = localStorage.getItem('bestTime') || 0; // Recupera o melhor tempo do armazenamento local
 
-// Atualiza o display do melhor tempo
-if (bestTime > 0) {
-    bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-}
 
-const jump = () => {
-    if (!mario.classList.contains('jump')) {
-        mario.classList.add('jump');
-        setTimeout(() => {
-            mario.classList.remove('jump');
-        }, 500);
-    }
-};
+const musica1 = document.getElementById('musica1'); // Primeira música
+const musica2 = document.getElementById('musica2'); // Segunda música
 
-const startGameHandler = (event) => {
-    if (event.code === 'Space') {
-        startGame.classList.add('hidden');
-        gameOver.classList.add('hidden');
-        mario.classList.remove('hidden');
-        pipe.classList.remove('hidden');
-        document.removeEventListener('keydown', startGameHandler);
-        document.addEventListener('keydown', jump);
 
-        startTime = Date.now(); // Marca o tempo de início
-
-        gameLoop = setInterval(() => {
-            const pipePosition = pipe.offsetLeft;
-            const marioPosition = parseInt(window.getComputedStyle(mario).bottom, 10);
-            elapsedTime = Date.now() - startTime;
-
-            // Atualiza o display do tempo decorrido
-            timeDisplay.textContent = ` ${(elapsedTime / 1000).toFixed(1)}`;
-
-            if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-                pipe.style.animation = 'none';
-                pipe.style.left = `${pipePosition}px`;
-
-                mario.style.animation = 'none';
-                mario.style.bottom = `${marioPosition}px`;
-
-                mario.src = './imagens/batsimbolo.png';
-                mario.style.width = '75px';
-                mario.style.marginLeft = '0px';
-
-                gameOver.classList.remove('hidden');
-
-                clearInterval(gameLoop);
-
-                // Verifica se o tempo atual é o melhor tempo
-                if (elapsedTime > bestTime) {
-                    bestTime = elapsedTime;
-                    localStorage.setItem('bestTime', bestTime); // Armazena o melhor tempo no armazenamento local
-                    bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-                }
-
-                document.addEventListener('keydown', () => {
-                    location.reload();
-                });
-            }
-        }, 10);
-    }
-};
-
-document.addEventListener('keydown', startGameHandler);
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const mario = document.querySelector('.mario');
-const pipe = document.querySelector('.pipe');
-const startGame = document.querySelector('.start-game');
-const gameOver = document.querySelector('.game-over');
-const timeDisplay = document.querySelector('.time');
-const bestTimeDisplay = document.querySelector('.besttime');
-
-let gameLoop;
-let startTime;
-let elapsedTime = 0;
-let bestTime = localStorage.getItem('bestTime') || 0; // Recupera o melhor tempo do armazenamento local
-let pipeSpeed = 2000; // Duração inicial da animação do pipe (em ms)
-const speedIncreaseInterval = 10000; // Intervalo de tempo para aumentar a velocidade (em ms)
-const speedMultiplier = 0.9; // Multiplicador para aumentar a velocidade
-
-// Atualiza o display do melhor tempo
-if (bestTime > 0) {
-    bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-}
-
-const jump = () => {
-    if (!mario.classList.contains('jump')) {
-        mario.classList.add('jump');
-        setTimeout(() => {
-            mario.classList.remove('jump');
-        }, 500);
-    }
-};
-
-const startGameHandler = (event) => {
-    if (event.code === 'Space') {
-        startGame.classList.add('hidden');
-        gameOver.classList.add('hidden');
-        mario.classList.remove('hidden');
-        pipe.classList.remove('hidden');
-        document.removeEventListener('keydown', startGameHandler);
-        document.addEventListener('keydown', jump);
-
-        startTime = Date.now(); // Marca o tempo de início
-
-        pipe.style.animation = `pipe-animation ${pipeSpeed / 1000}s infinite linear`;
-
-        gameLoop = setInterval(() => {
-            const pipePosition = pipe.offsetLeft;
-            const marioPosition = parseInt(window.getComputedStyle(mario).bottom, 10);
-            elapsedTime = Date.now() - startTime;
-
-            // Atualiza o display do tempo decorrido
-            timeDisplay.textContent = ` ${(elapsedTime / 1000).toFixed(1)}`;
-
-            if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-                pipe.style.animation = 'none';
-                pipe.style.left = `${pipePosition}px`;
-
-                mario.style.animation = 'none';
-                mario.style.bottom = `${marioPosition}px`;
-
-                mario.src = './imagens/batsimbolo.png';
-                mario.style.width = '75px';
-                mario.style.marginLeft = '0px';
-
-                gameOver.classList.remove('hidden');
-
-                clearInterval(gameLoop);
-
-                // Verifica se o tempo atual é o melhor tempo
-                if (elapsedTime > bestTime) {
-                    bestTime = elapsedTime;
-                    localStorage.setItem('bestTime', bestTime); // Armazena o melhor tempo no armazenamento local
-                    bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-                }
-
-                document.addEventListener('keydown', () => {
-                    location.reload();
-                });
-            }
-        }, 10);
-
-        // Aumenta a velocidade do pipe a cada 10 segundos sem "flicker"
-        setInterval(() => {
-            // Calcula a porcentagem da animação atual completada
-            const pipePosition = pipe.offsetLeft;
-            const pipeTotalWidth = window.innerWidth + pipe.offsetWidth;
-            const pipeAnimationTimeRemaining = (pipePosition / pipeTotalWidth) * pipeSpeed;
-
-            // Remove a animação atual e aplica uma nova com a velocidade aumentada
-            pipe.style.animation = 'none';
-            pipe.offsetHeight; // Força o reflow (trava a remoção de animação)
-            pipeSpeed *= speedMultiplier;
-            pipe.style.animation = `pipe-animation ${pipeSpeed / 1000}s linear ${pipeAnimationTimeRemaining / 1000}s infinite`;
-        }, speedIncreaseInterval);
-    }
-};
-
-document.addEventListener('keydown', startGameHandler);
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-/*const mario = document.querySelector('.mario');
-const pipe = document.querySelector('.pipe');
-const startGame = document.querySelector('.start-game');
-const gameOver = document.querySelector('.game-over');
-const timeDisplay = document.querySelector('.time');
-const bestTimeDisplay = document.querySelector('.besttime');
-
-let gameLoop;
-let startTime;
-let elapsedTime = 0;
-let bestTime = localStorage.getItem('bestTime') || 0; // Recupera o melhor tempo do armazenamento local
-let pipeSpeed =9; // Velocidade inicial do pipe (em pixels por frame) - Ajuste para iniciar mais rápido
-const speedIncreaseInterval = 10000; // Intervalo de tempo para aumentar a velocidade (em ms)
-const speedMultiplier = 1.2; // Multiplicador para aumentar a velocidade
-
-// Atualiza o display do melhor tempo
-if (bestTime > 0) {
-    bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-}
-
-const jump = () => {
-    if (!mario.classList.contains('jump')) {
-        mario.classList.add('jump');
-        setTimeout(() => {
-            mario.classList.remove('jump');
-        }, 500);
-    }
-};
-
-const startGameHandler = (event) => {
-    if (event.code === 'Space') {
-        startGame.classList.add('hidden');
-        gameOver.classList.add('hidden');
-        mario.classList.remove('hidden');
-        pipe.classList.remove('hidden');
-        document.removeEventListener('keydown', startGameHandler);
-        document.addEventListener('keydown', jump);
-
-        startTime = Date.now(); // Marca o tempo de início
-
-        // Inicializa a posição do pipe
-        let pipePosition = window.innerWidth;
-
-        gameLoop = setInterval(() => {
-            // Move o pipe para a esquerda
-            pipePosition -= pipeSpeed;
-            pipe.style.transform = `translateX(${pipePosition}px)`;
-
-            const marioPosition = parseInt(window.getComputedStyle(mario).bottom, 10);
-            elapsedTime = Date.now() - startTime;
-
-            // Atualiza o display do tempo decorrido
-            timeDisplay.textContent = ` ${(elapsedTime / 1000).toFixed(1)}`;
-
-            if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-                // Jogo terminado
-                pipe.style.transform = `translateX(${pipePosition}px)`;
-                mario.style.animation = 'none';
-                mario.style.bottom = `${marioPosition}px`;
-
-                mario.src = './imagens/batsimbolo.png';
-                mario.style.height = '50px'
-                mario.style.width = '75px';
-                mario.style.marginLeft = '0px';
-
-                gameOver.classList.remove('hidden');
-
-                clearInterval(gameLoop);
-
-                // Verifica se o tempo atual é o melhor tempo
-                if (elapsedTime > bestTime) {
-                    bestTime = elapsedTime;
-                    localStorage.setItem('bestTime', bestTime); // Armazena o melhor tempo no armazenamento local
-                    bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-                }
-
-                document.addEventListener('keydown', () => {
-                    location.reload();
-                });
-            }
-
-            // Se o pipe sair da tela, reinicie a posição
-            if (pipePosition < -pipe.offsetWidth) {
-                pipePosition = window.innerWidth;
-            }
-        }, 10);
-
-        // Aumenta a dificuldade a cada 10 segundos
-        setInterval(() => {
-            pipeSpeed *= speedMultiplier; // Aumenta a velocidade do pipe
-        }, speedIncreaseInterval);
-    }
-};
-
-document.addEventListener('keydown', startGameHandler);
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const mario = document.querySelector('.mario');
-const pipe = document.querySelector('.pipe');
-const startGame = document.querySelector('.start-game');
-const gameOver = document.querySelector('.game-over');
-const timeDisplay = document.querySelector('.time');
-const bestTimeDisplay = document.querySelector('.besttime');
-
-let gameLoop;
-let startTime;
-let elapsedTime = 0;
-let bestTime = localStorage.getItem('bestTime') || 0; // Recupera o melhor tempo do armazenamento local
-let pipeSpeed = 10; // Velocidade inicial do pipe (em pixels por frame)
-const speedIncreaseInterval = 8000; // Intervalo de tempo para aumentar a velocidade (em ms)
-const speedIncreaseRate = 0.850; // Taxa de aumento da velocidade (adicionar a cada intervalo)
-
-if (bestTime > 0) {
-    bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-}
-
-const jump = () => {
-    if (!mario.classList.contains('jump')) {
-        mario.classList.add('jump');
-        setTimeout(() => {
-            mario.classList.remove('jump');
-        }, 500);
-    }
-};
-
-const startGameHandler = (event) => {
-    if (event.code === 'Space') {
-        startGame.classList.add('hidden');
-        gameOver.classList.add('hidden');
-        mario.classList.remove('hidden');
-        pipe.classList.remove('hidden');
-        document.removeEventListener('keydown', startGameHandler);
-        document.addEventListener('keydown', jump);
-
-        startTime = Date.now(); // Marca o tempo de início
-
-        // Inicializa a posição do pipe
-        let pipePosition = window.innerWidth;
-
-        gameLoop = setInterval(() => {
-            // Move o pipe para a esquerda
-            pipePosition -= pipeSpeed;
-            pipe.style.transform = `translateX(${pipePosition}px)`;
-
-            const marioPosition = parseInt(window.getComputedStyle(mario).bottom, 10);
-            elapsedTime = Date.now() - startTime;
-
-            // Atualiza o display do tempo decorrido
-            timeDisplay.textContent = ` ${(elapsedTime / 1000).toFixed(1)}`;
-
-            if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-                // Jogo terminado
-                pipe.style.transform = `translateX(${pipePosition}px)`;
-                mario.style.animation = 'none';
-                mario.style.bottom = `${marioPosition}px`;
-
-                mario.src = './imagens/batsimbolo.png';
-                mario.style.height = '50px'
-                mario.style.width = '75px';
-                mario.style.marginLeft = '0px';
-
-                gameOver.classList.remove('hidden');
-
-                clearInterval(gameLoop);
-
-                // Verifica se o tempo atual é o melhor tempo
-                if (elapsedTime > bestTime) {
-                    bestTime = elapsedTime;
-                    localStorage.setItem('bestTime', bestTime); // Armazena o melhor tempo no armazenamento local
-                    bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-                }
-
-                document.addEventListener('keydown', () => {
-                    location.reload();
-                });
-            }
-
-            // Se o pipe sair da tela, reinicie a posição
-            if (pipePosition < -pipe.offsetWidth) {
-                pipePosition = window.innerWidth;
-            }
-        }, 10);
-
-        // Aumenta a dificuldade de forma contínua
-        setInterval(() => {
-            pipeSpeed += speedIncreaseRate; // Aumenta a velocidade de forma suave
-        }, speedIncreaseInterval);
-    }
-};
-
-document.addEventListener('keydown', startGameHandler);
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const mario = document.querySelector('.mario');
-        const pipe = document.querySelector('.pipe');
-        const startGame = document.querySelector('.start-game');
-        const gameOver = document.querySelector('.game-over');
-        const timeDisplay = document.querySelector('.time');
-        const bestTimeDisplay = document.querySelector('.besttime');
-
-        let gameLoop;
-        let startTime;
-        let elapsedTime = 0;
-        let bestTime = localStorage.getItem('bestTime') || 0; // Recupera o melhor tempo do armazenamento local
-        let pipeSpeed = 9; // Velocidade inicial do pipe (em pixels por frame)
-        const speedIncreaseInterval = 10000; // Intervalo de tempo para aumentar a velocidade (em ms)
-        const speedIncreaseRate = 0.100; // Taxa de aumento da velocidade (adicionar a cada intervalo)
-
-        if (bestTime > 0) {
-            bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-        }
-
-        const jump = () => {
-            if (!mario.classList.contains('jump')) {
-                mario.classList.add('jump');
-                setTimeout(() => {
-                    mario.classList.remove('jump');
-                }, 500);
-            }
-        };
-
-        const restartGame = () => {
-            location.reload();
-        };
-
-        const startGameHandler = (event) => {
-            if (event.code === 'Space') {
-                startGame.classList.add('hidden');
-                gameOver.classList.add('hidden');
-                mario.classList.remove('hidden');
-                pipe.classList.remove('hidden');
-                document.removeEventListener('keydown', startGameHandler);
-                document.addEventListener('keydown', jump);
-
-                startTime = Date.now(); // Marca o tempo de início
-
-                // Inicializa a posição do pipe
-                let pipePosition = window.innerWidth;
-
-                gameLoop = setInterval(() => {
-                    // Move o pipe para a esquerda
-                    pipePosition -= pipeSpeed;
-                    pipe.style.transform = `translateX(${pipePosition}px)`;
-
-                    const marioPosition = parseInt(window.getComputedStyle(mario).bottom, 10);
-                    elapsedTime = Date.now() - startTime;
-
-                    // Atualiza o display do tempo decorrido
-                    timeDisplay.textContent = ` ${(elapsedTime / 1000).toFixed(1)}`;
-
-                    // Verifica se há colisão entre Mario e o pipe
-                    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-                        // Jogo terminado
-                        pipe.style.transform = `translateX(${pipePosition}px)`;
-                        mario.style.animation = 'none';
-                        mario.style.bottom = `${marioPosition}px`;
-
-                        mario.src = './imagens/batsimbolo.png';
-                        mario.style.height = '50px';
-                        mario.style.width = '75px';
-                        mario.style.marginLeft = '0px';
-
-                        gameOver.classList.remove('hidden');
-
-                        clearInterval(gameLoop);
-
-                        // Verifica se o tempo atual é o melhor tempo
-                        if (elapsedTime < bestTime || bestTime === 0) {
-                            bestTime = elapsedTime;
-                            localStorage.setItem('bestTime', bestTime); // Armazena o melhor tempo no armazenamento local
-                            bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-                        }
-
-                        document.addEventListener('keydown', restartGame);
-                    }
-
-                    // Se o pipe sair da tela, reinicie a posição
-                    if (pipePosition < -pipe.offsetWidth) {
-                        pipePosition = window.innerWidth;
-                    }
-                }, 10);
-
-                // Aumenta a dificuldade de forma contínua
-                setInterval(() => {
-                    pipeSpeed += speedIncreaseRate; // Aumenta a velocidade de forma suave
-                }, speedIncreaseInterval);
-            }
-        };
-
-        document.addEventListener('keydown', startGameHandler);
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const mario = document.querySelector('.mario');
-const pipe = document.querySelector('.pipe');
-const startGame = document.querySelector('.start-game');
-const gameOver = document.querySelector('.game-over');
-const timeDisplay = document.querySelector('.time');
-const bestTimeDisplay = document.querySelector('.besttime');
-
-let gameLoop;
-let startTime;
-let elapsedTime = 0;
-let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity; // Inicializa com Infinity para garantir que qualquer tempo seja melhor
-let pipeSpeed = 9; // Velocidade inicial do pipe (em pixels por frame)
-const speedIncreaseInterval = 10000; // Intervalo de tempo para aumentar a velocidade (em ms)
-const speedIncreaseRate = 0.100; // Taxa de aumento da velocidade (adicionar a cada intervalo)
-
-// Atualiza a exibição do melhor tempo
-const updateBestTimeDisplay = () => {
-    if (bestTime < Infinity) {
-        bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-    } else {
-        bestTimeDisplay.textContent = 'No record yet';
-    }
-};
-
-updateBestTimeDisplay(); // Atualiza o melhor tempo ao iniciar
-
-const jump = () => {
-    if (!mario.classList.contains('jump')) {
-        mario.classList.add('jump');
-        setTimeout(() => {
-            mario.classList.remove('jump');
-        }, 500);
-    }
-};
-
-const restartGame = () => {
-    location.reload();
-};
-
-const startGameHandler = (event) => {
-    if (event.code === 'Space') {
-        startGame.classList.add('hidden');
-        gameOver.classList.add('hidden');
-        mario.classList.remove('hidden');
-        pipe.classList.remove('hidden');
-        document.removeEventListener('keydown', startGameHandler);
-        document.addEventListener('keydown', jump);
-
-        startTime = Date.now(); // Marca o tempo de início
-
-        // Inicializa a posição do pipe
-        let pipePosition = window.innerWidth;
-
-        gameLoop = setInterval(() => {
-            // Move o pipe para a esquerda
-            pipePosition -= pipeSpeed;
-            pipe.style.transform = `translateX(${pipePosition}px)`;
-
-            const marioPosition = parseInt(window.getComputedStyle(mario).bottom, 10);
-            elapsedTime = Date.now() - startTime;
-
-            // Atualiza o display do tempo decorrido
-            timeDisplay.textContent = ` ${(elapsedTime / 1000).toFixed(1)}`;
-
-            // Atualiza o display do melhor tempo
-            updateBestTimeDisplay();
-
-            // Verifica se há colisão entre Mario e o pipe
-            if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-                // Jogo terminado
-                pipe.style.transform = `translateX(${pipePosition}px)`;
-                mario.style.animation = 'none';
-                mario.style.bottom = `${marioPosition}px`;
-
-                mario.src = './imagens/batsimbolo.png';
-                mario.style.height = '50px';
-                mario.style.width = '75px';
-                mario.style.marginLeft = '0px';
-
-                gameOver.classList.remove('hidden');
-
-                clearInterval(gameLoop);
-
-                // Verifica se o tempo atual é o melhor tempo
-                if (elapsedTime < bestTime) {
-                    bestTime = elapsedTime;
-                    localStorage.setItem('bestTime', bestTime); // Armazena o melhor tempo no armazenamento local
-                    console.log('New bestTime:', bestTime); // Log para verificar o novo melhor tempo
-                }
-
-                // Atualiza o display do melhor tempo
-                updateBestTimeDisplay();
-
-                document.addEventListener('keydown', restartGame);
-            }
-
-            // Se o pipe sair da tela, reinicie a posição
-            if (pipePosition < -pipe.offsetWidth) {
-                pipePosition = window.innerWidth;
-            }
-        }, 10);
-
-        // Aumenta a dificuldade de forma contínua
-        setInterval(() => {
-            pipeSpeed += speedIncreaseRate; // Aumenta a velocidade de forma suave
-        }, speedIncreaseInterval);
-    }
-};
-
-document.addEventListener('keydown', startGameHandler);
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const mario = document.querySelector('.mario');
-const pipe = document.querySelector('.pipe');
-const startGame = document.querySelector('.start-game');
-const gameOver = document.querySelector('.game-over');
-const timeDisplay = document.querySelector('.time');
-const bestTimeDisplay = document.querySelector('.besttime');
-
-let gameLoop;
-let startTime;
-let elapsedTime = 0;
-let bestTime = parseFloat(localStorage.getItem('bestTime')) || 0; // Inicializa com 0 para garantir que qualquer tempo seja maior
-let pipeSpeed = 9; // Velocidade inicial do pipe (em pixels por frame)
-const speedIncreaseInterval = 7000; // Intervalo de tempo para aumentar a velocidade (em ms)
-const speedIncreaseRate = 0.140; // Taxa de aumento da velocidade (adicionar a cada intervalo)
-
-// Atualiza a exibição do melhor tempo
-const updateBestTimeDisplay = () => {
-    if (bestTime > 0) {
-        bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
-    } else {
-        bestTimeDisplay.textContent = 'No record yet';
-    }
-};
-
-updateBestTimeDisplay(); // Atualiza o melhor tempo ao iniciar
-
-const jump = () => {
-    if (!mario.classList.contains('jump')) {
-        mario.classList.add('jump');
-        setTimeout(() => {
-            mario.classList.remove('jump');
-        }, 500);
-    }
-};
-
-const restartGame = () => {
-    location.reload();
-};
-
-const startGameHandler = (event) => {
-    if (event.code === 'Space') {
-        startGame.classList.add('hidden');
-        gameOver.classList.add('hidden');
-        mario.classList.remove('hidden');
-        pipe.classList.remove('hidden');
-        document.removeEventListener('keydown', startGameHandler);
-        document.addEventListener('keydown', jump);
-
-        startTime = Date.now(); // Marca o tempo de início
-
-        // Inicializa a posição do pipe
-        let pipePosition = window.innerWidth;
-
-        gameLoop = setInterval(() => {
-            // Move o pipe para a esquerda
-            pipePosition -= pipeSpeed;
-            pipe.style.transform = `translateX(${pipePosition}px)`;
-
-            const marioPosition = parseInt(window.getComputedStyle(mario).bottom, 10);
-            elapsedTime = Date.now() - startTime;
-
-            // Atualiza o display do tempo decorrido
-            timeDisplay.textContent = ` ${(elapsedTime / 1000).toFixed(1)}`;
-
-            // Atualiza o display do melhor tempo
-            updateBestTimeDisplay();
-
-            // Verifica se há colisão entre Mario e o pipe
-            if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-                // Jogo terminado
-                pipe.style.transform = `translateX(${pipePosition}px)`;
-                mario.style.animation = 'none';
-                mario.style.bottom = `${marioPosition}px`;
-
-                mario.src = './imagens/batsimbolo.png';
-                mario.style.height = '50px';
-                mario.style.width = '75px';
-                mario.style.marginLeft = '0px';
-
-                gameOver.classList.remove('hidden');
-
-                clearInterval(gameLoop);
-
-                // Verifica se o tempo atual é o maior tempo
-                if (elapsedTime > bestTime) {
-                    bestTime = elapsedTime;
-                    localStorage.setItem('bestTime', bestTime); // Armazena o maior tempo no armazenamento local
-                    console.log('New bestTime:', bestTime); // Log para verificar o novo melhor tempo
-                }
-
-                // Atualiza o display do melhor tempo
-                updateBestTimeDisplay();
-
-                document.addEventListener('keydown', restartGame);
-            }
-
-            // Se o pipe sair da tela, reinicie a posição
-            if (pipePosition < -pipe.offsetWidth) {
-                pipePosition = window.innerWidth;
-            }
-        }, 10);
-
-        // Aumenta a dificuldade de forma contínua
-        setInterval(() => {
-            pipeSpeed += speedIncreaseRate; // Aumenta a velocidade de forma suave
-        }, speedIncreaseInterval);
-    }
-};
-
-document.addEventListener('keydown', startGameHandler);*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const mario = document.querySelector('.mario');
-const pipe = document.querySelector('.pipe');
-const startGame = document.querySelector('.start-game');
-const gameOver = document.querySelector('.game-over');
-const timeDisplay = document.querySelector('.time');
-const bestTimeDisplay = document.querySelector('.besttime');
-
-const musica1 = document.getElementById('musica1');
-const musica2 = document.getElementById('musica2');
 
 // Configura o volume das músicas (valores entre 0.0 e 1.0)
-musica1.volume = 0.1; // Volume para a primeira música (50%)
-musica2.volume = 0.1; // Volume para a segunda música (50%)
+musica1.volume = 0.1; // Volume para a primeira música
+musica2.volume = 0.1; // Volume para a segunda música
 
-// Função para alternar entre as músicas
+
+
+// Função para alternar entre as músicas quando uma termina
 const handleMusicEnd = () => {
     if (musica1.ended) {
-        musica2.play(); // Toca a segunda música quando a primeira terminar
+        musica2.play(); // Toca a segunda música quando a primeira termina
     } else if (musica2.ended) {
-        musica1.play(); // Toca a primeira música quando a segunda terminar
+        musica1.play(); // Toca a primeira música quando a segunda termina
     }
 };
 
-// Adiciona os ouvintes de evento para alternar as músicas
+
+
+// Adiciona ouvintes de eventos para alternar as músicas
 musica1.addEventListener('ended', handleMusicEnd);
 musica2.addEventListener('ended', handleMusicEnd);
 
-let gameLoop;
-let startTime;
-let elapsedTime = 0;
-let bestTime = parseFloat(localStorage.getItem('bestTime')) || 0; // Inicializa com 0 para garantir que qualquer tempo seja maior
+
+
+let gameLoop; // Referência ao loop do jogo
+let startTime; // Marca o tempo de início do jogo
+let elapsedTime = 0; // Tempo decorrido desde o início
+let bestTime = parseFloat(localStorage.getItem('bestTime')) || 0; // Melhor tempo registrado, inicia com 0 se não houver registro
 let pipeSpeed = 9; // Velocidade inicial do pipe (em pixels por frame)
 const speedIncreaseInterval = 7000; // Intervalo de tempo para aumentar a velocidade (em ms)
 const speedIncreaseRate = 0.140; // Taxa de aumento da velocidade (adicionar a cada intervalo)
 
+
+
 // Atualiza a exibição do melhor tempo
 const updateBestTimeDisplay = () => {
     if (bestTime > 0) {
-        bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`;
+        bestTimeDisplay.textContent = ` ${(bestTime / 1000).toFixed(1)}`; // Exibe o melhor tempo em segundos
     } else {
-        bestTimeDisplay.textContent = 'No record yet';
+        bestTimeDisplay.textContent = 'No record yet'; // Mensagem caso não haja registro de tempo
     }
 };
 
+
+
 updateBestTimeDisplay(); // Atualiza o melhor tempo ao iniciar
 
+// Função para fazer o Mario pular
 const jump = () => {
-    if (!mario.classList.contains('jump')) {
-        mario.classList.add('jump');
+    if (!mario.classList.contains('jump')) { // Verifica se o Mario já não está pulando
+        mario.classList.add('jump'); // Adiciona a classe de salto
         setTimeout(() => {
-            mario.classList.remove('jump');
+            mario.classList.remove('jump'); // Remove a classe de salto após 500ms
         }, 500);
     }
 };
 
+
+
+// Função para reiniciar o jogo
 const restartGame = () => {
-    location.reload();
+    location.reload(); // Recarrega a página
 };
 
-const startGameHandler = (event) => {
-    if (event.code === 'Space') {
-        startGame.classList.add('hidden');
-        gameOver.classList.add('hidden');
-        mario.classList.remove('hidden');
-        pipe.classList.remove('hidden');
-        document.removeEventListener('keydown', startGameHandler);
-        document.addEventListener('keydown', jump);
 
-        startTime = Date.now(); // Marca o tempo de início
+
+// Função que inicia o jogo quando a tecla 'Space' é pressionada
+const startGameHandler = (event) => {
+    if (event.code === 'Space') { // Verifica se a tecla pressionada é 'Space'
+        startGame.classList.add('hidden'); // Esconde a tela inicial
+        gameOver.classList.add('hidden'); // Esconde a tela de game over
+        mario.classList.remove('hidden'); // Exibe o Mario
+        pipe.classList.remove('hidden'); // Exibe o pipe
+        document.removeEventListener('keydown', startGameHandler); // Remove o ouvinte de evento de início
+        document.addEventListener('keydown', jump); // Adiciona o ouvinte de evento de pular
+
+        startTime = Date.now(); // Marca o tempo de início do jogo
 
         // Inicializa a posição do pipe
-        let pipePosition = window.innerWidth;
+        let pipePosition = window.innerWidth; // Começa com o pipe fora da tela
 
         // Inicia a música
         musica1.play(); // Começa com a primeira música
@@ -943,8 +101,8 @@ const startGameHandler = (event) => {
             pipePosition -= pipeSpeed;
             pipe.style.transform = `translateX(${pipePosition}px)`;
 
-            const marioPosition = parseInt(window.getComputedStyle(mario).bottom, 10);
-            elapsedTime = Date.now() - startTime;
+            const marioPosition = parseInt(window.getComputedStyle(mario).bottom, 10); // Obtém a posição inferior do Mario
+            elapsedTime = Date.now() - startTime; // Calcula o tempo decorrido
 
             // Atualiza o display do tempo decorrido
             timeDisplay.textContent = ` ${(elapsedTime / 1000).toFixed(1)}`;
@@ -956,34 +114,34 @@ const startGameHandler = (event) => {
             if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
                 // Jogo terminado
                 pipe.style.transform = `translateX(${pipePosition}px)`;
-                mario.style.animation = 'none';
-                mario.style.bottom = `${marioPosition}px`;
+                mario.style.animation = 'none'; // Para qualquer animação do Mario
+                mario.style.bottom = `${marioPosition}px`; // Mantém a posição do Mario
 
-                mario.src = './imagens/batsimbolo.png';
-                mario.style.height = '50px';
-                mario.style.width = '75px';
-                mario.style.marginLeft = '0px';
+                mario.src = './imagens/batsimbolo.png'; // Muda a imagem do Mario para o símbolo de batman
+                mario.style.height = '50px'; // Ajusta a altura do Mario
+                mario.style.width = '75px'; // Ajusta a largura do Mario
+                mario.style.marginLeft = '0px'; // Remove qualquer margem esquerda
 
-                gameOver.classList.remove('hidden');
+                gameOver.classList.remove('hidden'); // Exibe a tela de game over
 
-                clearInterval(gameLoop);
+                clearInterval(gameLoop); // Para o loop do jogo
 
-                // Verifica se o tempo atual é o maior tempo
+                // Verifica se o tempo atual é o melhor tempo
                 if (elapsedTime > bestTime) {
-                    bestTime = elapsedTime;
-                    localStorage.setItem('bestTime', bestTime); // Armazena o maior tempo no armazenamento local
+                    bestTime = elapsedTime; // Atualiza o melhor tempo
+                    localStorage.setItem('bestTime', bestTime); // Armazena o melhor tempo no armazenamento local
                     console.log('New bestTime:', bestTime); // Log para verificar o novo melhor tempo
                 }
 
                 // Atualiza o display do melhor tempo
                 updateBestTimeDisplay();
 
-                document.addEventListener('keydown', restartGame);
+                document.addEventListener('keydown', restartGame); // Adiciona o ouvinte de evento para reiniciar o jogo
             }
 
             // Se o pipe sair da tela, reinicie a posição
             if (pipePosition < -pipe.offsetWidth) {
-                pipePosition = window.innerWidth;
+                pipePosition = window.innerWidth; // Reseta a posição do pipe para fora da tela à direita
             }
         }, 10);
 
@@ -994,5 +152,5 @@ const startGameHandler = (event) => {
     }
 };
 
+// Adiciona o ouvinte de evento para iniciar o jogo ao pressionar a tecla 'Space'
 document.addEventListener('keydown', startGameHandler);
-

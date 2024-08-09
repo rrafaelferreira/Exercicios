@@ -1,41 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    
     <link rel="stylesheet" href="./style.css" />
     <link rel="shortcut icon" href="img/mario-speed.gif" type="image/x-icon" />
     <link rel="shortcut icon" href="./imagens/batsimbolo.png">
-
     <script src="./node.js" defer></script>
 
+    <title>Arkham Jump</title>
 
-    <title>Arkham Jump </title>
   </head>
   <body>
-    
+    <!-- Contêiner principal do jogo -->
     <div class="game-board">
-      <img src="./imagens/Tela_inicial_arkhanjump.png"class="start-game" alt="Pressione para iniciar Mario Jump"/>
-      <img src="./img/clouds.png" class="clouds" alt="Imagem de nuvens" />
+      <!-- Imagem da tela inicial do jogo, usada para iniciar o jogo -->
+      <img src="./imagens/Tela_inicial_arkhanjump.png" class="start-game" alt="Pressione para iniciar Mario Jump"/>
+      
+      <!-- Contêiner para as imagens de fundo do jogo -->
       <div class="fundo-container">
+        <!-- Imagem de fundo que pode ser repetida para criar um efeito de rolagem -->
         <img src="./imagens/Arkamcidade (4).png" class="fundo" alt="fundo cidade">
+        <!-- Outra imagem de fundo para o efeito de rolagem -->
         <img src="./imagens/Arkamcidade (4).png" class="fundo" alt="fundo cidade">
       </div>
+      
+      <!-- Imagem do personagem Mario, inicialmente oculta -->
       <img src="./imagens/batman-pixel-art.gif" class="mario hidden pause-initial-mario" alt="Gif do mário e o yoshi correndo"/>
+      
+      <!-- Imagem do pipe (cano), inicialmente oculta -->
       <img src="./imagens/joker-removebg-preview.png" class="pipe hidden pause-initial-pipe" alt="Imagem do cano"/>
+      
+      <!-- Imagem exibida quando o jogo termina, inicialmente oculta -->
       <img src="./imagens/gameover_arkhanjump-removebg-preview.png" class="game-over hidden" alt="gameover">
+      
+      <!-- Contêiner para exibir o tempo do jogo e o melhor tempo -->
       <div class="tempo">
+        <!-- Elemento para mostrar o tempo atual do jogo -->
         <div class="time">00.00.0</div>
+        <!-- Elemento para mostrar o melhor tempo registrado -->
         <div class="besttime">00.00.0</div>
-
+        
+        <!-- Contêiner para os elementos de áudio do jogo -->
         <div class="musica">
+          <!-- Áudio que toca em loop -->
           <audio id="musica1" src="./musica/Nirvana - Something in the Way _ Trilha-Sonora de Batman (2022).mp3" loop></audio>
+          <!-- Outro áudio que toca em loop -->
           <audio id="musica2" src="./musica/Introduce a Little Anarchy _ Trilha sonora.mp3" loop></audio>
         </div>
       </div>
     </div>
-
   </body>
 </html>

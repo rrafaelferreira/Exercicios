@@ -1,3 +1,4 @@
+/* Reseta margens, preenchimentos e bordas, e configura box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -5,156 +6,182 @@
     border: none;
 }
 
+
+
+/* Estilo para o contêiner principal do jogo */
 .game-board {
-    width: 100%;
-    margin: 0 auto;
-    height: 100vh;
-   /* border-bottom: 45px solid #353635;*/
-   border-bottom: 45px solid black;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(#1c91f8, #91f0fb);
+    width: 100%; /* Ocupa a largura total da tela */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    height: 100vh; /* Ocupa a altura total da viewport */
+    border-bottom: 45px solid black; /* Borda inferior para o efeito visual */
+    position: relative; /* Para posicionamento absoluto dos filhos */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa o contêiner */
+    background: linear-gradient(#1c91f8, #91f0fb); /* Gradiente de fundo */
 }
 
-.fundo-container{
-    position: absolute;
-    width: 200%;
-    height: 100%;
+
+
+/* Contêiner para as imagens de fundo */
+.fundo-container {
+    position: absolute; /* Posiciona em relação ao contêiner pai (.game-board) */
+    width: 200%; /* Largura dupla para permitir o efeito de rolagem */
+    height: 100%; /* Ocupa a altura total do contêiner pai */
     top: 0;
     left: 0;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    background-image: url(./imagens/Arkamcidade\ \(4\).png );
-    animation: scrollBackground 45s linear infinite;
+    display: flex; /* Usa flexbox para o alinhamento das imagens */
+    flex-direction: row; /* Alinha as imagens em linha */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa o contêiner */
+    background-image: url(./imagens/Arkamcidade\ \(4\).png ); /* Imagem de fundo */
+    animation: scrollBackground 45s linear infinite; /* Animação contínua de rolagem */
 }
 
+
+
+/* Estilo para as imagens de fundo */
 .fundo {
-    width: 50%;
-    height: 100%;
-    background-size: cover;
+    width: 50%; /* Cada imagem ocupa metade da largura do contêiner pai */
+    height: 100%; /* Ocupa a altura total do contêiner pai */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir o elemento */
 }
 
+
+
+/* Estilo para a imagem da tela inicial do jogo */
 .start-game {
-    width: 50%;
-    position: absolute;
-    top: 10%;
-    left: 25%;
-    z-index: 1000;
+    width: 50%; /* Ocupa metade da largura do contêiner pai */
+    position: absolute; /* Posiciona em relação ao contêiner pai (.game-board) */
+    top: 10%; /* Distância do topo do contêiner pai */
+    left: 25%; /* Distância da esquerda do contêiner pai */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
 }
 
-.game-over{
-    width: 50%;
-    position: absolute;
-    top: 10%;
-    left: 25%;
-    z-index: 1000;
+
+
+/* Estilo para a imagem de game over */
+.game-over {
+    width: 50%; /* Ocupa metade da largura do contêiner pai */
+    position: absolute; /* Posiciona em relação ao contêiner pai (.game-board) */
+    top: 10%; /* Distância do topo do contêiner pai */
+    left: 25%; /* Distância da esquerda do contêiner pai */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
 }
 
-.clouds {
-    position: absolute;
-    width: 500px;
-    margin-top: 10px;
-    animation: clouds-animation 20s linear infinite;
-}
 
+
+/* Estilo para a imagem do personagem Mario */
 .mario {
-    position: absolute;
-    bottom: 0;
-    width: 160px;
-    left: 90px;
-    height: 130px;
+    position: absolute; /* Posiciona em relação ao contêiner pai (.game-board) */
+    bottom: 0; /* Fixa na parte inferior do contêiner pai */
+    width: 160px; /* Largura da imagem */
+    left: 90px; /* Distância da esquerda do contêiner pai */
+    height: 130px; /* Altura da imagem */
 }
 
+
+
+/* Animação para o salto do Mario */
 .jump {
-    animation: mario-jump 600ms ease-out;
+    animation: mario-jump 600ms ease-out; /* Animação do salto */
 }
 
+
+
+/* Estilo para o pipe (cano) */
 .pipe {
-    position: absolute;
-    bottom: 0;
-    width: 80px; 
-    background-size: cover;
+    position: absolute; /* Posiciona em relação ao contêiner pai (.game-board) */
+    bottom: 0; /* Fixa na parte inferior do contêiner pai */
+    width: 80px; /* Largura do pipe */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir o elemento */
 }
 
+
+
+/* Estilo para o contêiner de tempo */
 .tempo {
-    position: absolute;
-    font-size: 20px;
-    color: white;
-    z-index: 1000;
+    position: absolute; /* Posiciona em relação ao contêiner pai (.game-board) */
+    font-size: 20px; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
     background-color: rgba(53, 54, 53, 0.9); /* Fundo escuro com transparência */
-    left: 40px;
-    top: 40px;
-    border-radius: 10px;
-    text-align: center;
-    width: 100px;
+    left: 40px; /* Distância da esquerda do contêiner pai */
+    top: 40px; /* Distância do topo do contêiner pai */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center; /* Alinhamento do texto ao centro */
+    width: 100px; /* Largura do contêiner */
 }
 
+
+
+/* Espaçamento entre as linhas de tempo */
 .time, .besttime {
-    margin: 5px 0; /* Espaçamento entre as linhas */
+    margin: 5px 0; /* Margem superior e inferior */
 }
 
+
+
+/* Animação para o movimento das nuvens (se usado) */
 @keyframes clouds-animation {
     from {
-        right: -550px;
+        right: -550px; /* Início da animação fora da tela à esquerda */
     }
 
     to {
-        right: 100%;
+        right: 100%; /* Fim da animação fora da tela à direita */
     }
 }
 
+
+
+/* Animação para o salto do Mario */
 @keyframes mario-jump {
     0% {
-        bottom: 0;
+        bottom: 0; /* Começa na posição inicial */
     }
 
     40% {
-        bottom: 210px;
+        bottom: 210px; /* Salto alto */
     }
 
     50% {
-        bottom: 210px;
+        bottom: 210px; /* Ponto alto do salto */
     }
 
     60% {
-        bottom: 210px;
+        bottom: 210px; /* Ponto alto do salto */
     }
 
     100% {
-        bottom: 0;
+        bottom: 0; /* Retorno à posição inicial */
     }
 }
 
-/*@keyframes pipe-animation {
+
+
+/* Animação para o movimento do pipe (cano) */
+@keyframes pipe-animation {
     from {
-        right: -80px;
+        transform: translateX(100vw); /* Início fora da tela à direita */
     }
-
     to {
-        right: 100%;
-    }
-}*/
-
-
-@keyframes pipe-animation{
-    from{
-        transform: translateX(100vw);
-    }
-    to{
-        transform: translateX(-100vw);
+        transform: translateX(-100vw); /* Fim fora da tela à esquerda */
     }
 }
 
+
+
+/* Animação para a rolagem do fundo */
 @keyframes scrollBackground {
     0% {
-        transform: translateX(0);
+        transform: translateX(0); /* Início da rolagem */
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-50%); /* Fim da rolagem, deslocado pela largura total */
     }
 }
 
+
+
+/* Classe para esconder elementos */
 .hidden {
-    display: none;
+    display: none; /* Oculta o elemento */
 }
