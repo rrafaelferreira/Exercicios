@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Formulário SUS</title>
 </head>
 <body>
-    
+    <div class="center-container">
+        <h1 id="welcome-text" class="center-text">Bem-vindo ao SUS!</h1>
+        <button id="center-button" class="center-button">Entrar</button>
+
+        <!-- Formulário oculto inicialmente -->
+        <div id="form-container" class="hidden">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" placeholder="Digite seu nome" required>
+            
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" placeholder="Digite seu CPF" required>
+            
+            <button class="center-button submit-button">Enviar</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
