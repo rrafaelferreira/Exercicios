@@ -78,3 +78,12 @@ input, select {
     font-size: 18px;
     color: #fff;
 }
+
+
+#classification-message{
+    padding-top: 50px;
+}
+
+#submit-symptoms{
+    margin-top: 50px;
+}

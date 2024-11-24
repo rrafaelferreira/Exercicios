@@ -31,7 +31,7 @@ document.getElementById('submit-button').addEventListener('click', function() {
     var cpfRegex = /^\d{11}$/; // Aceita apenas 11 dígitos numéricos
     if (!cpfRegex.test(cpf)) {
         errorMessage.classList.remove('hidden');
-        errorMessage.textContent = 'Por favor, digite um CPF válido (apenas números ate 11 dígitos).';
+        errorMessage.textContent = 'Por favor, digite um CPF válido (apenas números até 11 dígitos).';
         return;
     }
 
@@ -41,25 +41,37 @@ document.getElementById('submit-button').addEventListener('click', function() {
 });
 
 document.getElementById('submit-symptoms').addEventListener('click', function() {
-    var symptom = document.getElementById('symptoms').value;
+    var selectedSymptoms = Array.from(document.getElementById('symptoms').selectedOptions).map(option => option.value);
     var message = document.getElementById('classification-message');
 
-    if (symptom === '') {
+    if (selectedSymptoms.length === 0) {
         message.classList.add('hidden');
         return;
     }
 
-    var classification = '';
+    // Limita a seleção a no máximo dois sintomas
+    if (selectedSymptoms.length > 2) {
+        message.classList.remove('hidden');
+        message.textContent = 'Você pode selecionar no máximo dois sintomas.';
+        return;
+    }
 
-    // Classificação baseada no sintoma selecionado
-    if (['dor-cabeca', 'nariz-entupido', 'tosse-leve', 'cansaco-ocasional', 'dor-muscular', 'dor-garganta', 'irritacao-cutanea', 'coceira-pele', 'perda-apetite', 'desconforto-abdominal', 'febre-baixa', 'tontura-leve'].includes(symptom)) {
+    var classification = '';
+    var severityColor = '';
+
+    // Classificação e cor baseada nos sintomas selecionados
+    if (selectedSymptoms.some(symptom => ['febre-baixa', 'tosse-leve', 'dor-cabeca', 'nariz-entupido'].includes(symptom))) {
         classification = 'Sintomas Leves';
-    } else if (['febre-moderada', 'tosse-persistente', 'cansaco-constante', 'dor-muscular-intensa', 'dor-cabeca-moderada', 'dificuldade-respirar', 'dores-articulares', 'manchas-cutanias', 'nauseas', 'diarreia', 'dor-peito-leve', 'inchaco-pernas', 'sangramento-cortes', 'calafrios', 'diminui-urina'].includes(symptom)) {
+        severityColor = 'green'; // Verde
+    } else if (selectedSymptoms.some(symptom => ['febre-moderada', 'tosse-persistente', 'cansaco-constante', 'dor-muscular-intensa'].includes(symptom))) {
         classification = 'Sintomas Moderados';
+        severityColor = 'yellow'; // Amarelo
     } else {
         classification = 'Sintomas Graves';
+        severityColor = 'red'; // Vermelho
     }
 
     message.textContent = 'Classificação: ' + classification;
+    message.style.color = severityColor; // Aplica a cor à mensagem
     message.classList.remove('hidden');
 });
