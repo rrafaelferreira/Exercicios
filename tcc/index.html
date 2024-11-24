@@ -11,7 +11,7 @@
         <h1 id="welcome-text" class="center-text">Bem-vindo ao SUS!</h1>
         <button id="center-button" class="center-button">Entrar</button>
 
-        <!-- Formulário oculto inicialmente -->
+        <!-- Formulário de nome e CPF -->
         <div id="form-container" class="hidden">
             <label for="name">Nome:</label>
             <input type="text" id="name" placeholder="Digite seu nome" required>
@@ -19,9 +19,80 @@
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" placeholder="Digite seu CPF" required>
             
-            <button class="center-button submit-button">Enviar</button>
+            <button id="submit-button" class="center-button submit-button">Enviar</button>
+            <p id="error-message" class="error-message hidden"></p>
+        </div>
+
+        <!-- Formulário de sintomas -->
+        <div id="symptom-container" class="hidden">
+            <h2 class="center-text">Quais sintomas você está sentindo?</h2>
+            
+            <label for="symptoms">Escolha um sintoma:</label>
+            <select id="symptoms">
+                <option value="">Selecione um sintoma...</option>
+                <!-- Sintomas Leves -->
+                <optgroup label=" ">
+                    <option value="dor-cabeca">Dor de cabeça leve ou ocasional</option>
+                    <option value="nariz-entupido">Nariz entupido ou coriza</option>
+                    <option value="tosse-leve">Tosse leve</option>
+                    <option value="cansaco-ocasional">Cansaço ocasional</option>
+                    <option value="dor-muscular">Dor muscular após esforço físico</option>
+                    <option value="dor-garganta">Leve dor de garganta</option>
+                    <option value="irritacao-cutanea">Espinhas ou irritações cutâneas leves</option>
+                    <option value="coceira-pele">Leve coceira na pele</option>
+                    <option value="perda-apetite">Leve perda de apetite</option>
+                    <option value="desconforto-abdominal">Ligeiro desconforto abdominal</option>
+                    <option value="febre-baixa">Febre baixa (até 37,7°C)</option>
+                    <option value="tontura-leve">Tontura leve ou sensação de fraqueza</option>
+            
+
+                <!-- Sintomas Moderados -->
+                
+                    <option value="febre-moderada">Febre moderada (37,8°C - 38,5°C)</option>
+                    <option value="tosse-persistente">Tosse persistente</option>
+                    <option value="cansaco-constante">Cansaço constante ou fadiga inexplicada</option>
+                    <option value="dor-muscular-intensa">Dor muscular intensa em uma região</option>
+                    <option value="dor-cabeca-moderada">Dor de cabeça moderada e constante</option>
+                    <option value="dificuldade-respirar">Dificuldade moderada para respirar</option>
+                    <option value="dores-articulares">Dores articulares persistentes</option>
+                    <option value="manchas-cutanias">Manchas ou erupções cutâneas extensas</option>
+                    <option value="nauseas">Náuseas e vômitos persistentes</option>
+                    <option value="diarreia">Diarreia frequente (mais de 3 episódios por dia)</option>
+                    <option value="dor-peito-leve">Leve dor no peito</option>
+                    <option value="inchaco-pernas">Leve inchaço nas pernas</option>
+                    <option value="sangramento-cortes">Sangramento leve em cortes ou feridas</option>
+                    <option value="calafrios">Calafrios ou tremores</option>
+                    <option value="diminui-urina">Diminuição da urina</option>
+                
+
+                <!-- Sintomas Graves -->
+                
+                    <option value="febre-alta">Febre alta (acima de 39°C)</option>
+                    <option value="falta-ar">Falta de ar severa ou respiração ofegante</option>
+                    <option value="dor-intensa-peito">Dor intensa no peito, irradiando para braços ou mandíbula</option>
+                    <option value="sangue-urina-fezes">Sangue na urina ou fezes (hematúria/hematoquezia)</option>
+                    <option value="sangramento-vaginal">Sangramento vaginal intenso fora do período menstrual</option>
+                    <option value="confusao-mental">Confusão mental, desorientação ou fala arrastada</option>
+                    <option value="desmaios">Desmaios frequentes ou súbitos</option>
+                    <option value="palidez">Palidez extrema ou pele azulada</option>
+                    <option value="convulsoes">Convulsões</option>
+                    <option value="perda-visao">Perda de visão ou audição súbita</option>
+                    <option value="dor-abdominal-intensa">Dor abdominal intensa e contínua</option>
+                    <option value="vomito-com-sangue">Vômito com sangue (hematêmese)</option>
+                    <option value="paralisia-sudita">Paralisia súbita em um lado do corpo</option>
+                    <option value="urina-forte">Urina com odor forte ou cor muito escura</option>
+                    <option value="inchaco-facial">Inchaço súbito no rosto, lábios ou língua</option>
+                    <option value="dificuldade-urinar">Dificuldade severa para urinar ou ausência de urina</option>
+                    <option value="dor-costas-intensa">Dor intensa nas costas irradiando para a perna</option>
+                    <option value="batimentos-irregulares">Batimentos cardíacos irregulares ou muito rápidos</option>
+                </optgroup>
+            </select>
+            
+            <button id="submit-symptoms" class="center-button submit-button">Enviar Sintomas</button>
+            <p id="classification-message" class="center-text hidden"></p>
         </div>
     </div>
+
     <script src="./script.js"></script>
 </body>
 </html>
