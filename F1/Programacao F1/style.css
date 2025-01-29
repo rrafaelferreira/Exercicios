@@ -1,16 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Todhri&family=Roboto:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Todhri&family=Roboto:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Serif+Todhri&family=Roboto:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif+Todhri&family=Roboto:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&family=Roboto:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');      /*Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');      /*Kanit*/
+
 
 
 :root{
-    --fonte1: "Noto Serif Todhri", serif;   /*400*/
-    --fonte2: "Noto Serif Todhri", serif;   /*weight de 300 e style italic*/
-    --fonte3: "Noto Serif Todhri", serif;   /*300*/
-    --fonte4: "Noto Serif Todhri", serif;   /*Regular italic 400*/
-    --fonte5: "Lato", serif; 
+    --fonte1: "Roboto", serif;
+    --fonte2: "Kanit", serif;
 }
 
 
@@ -35,23 +30,33 @@ header{
     position: fixed;
     height: 150px;
     align-items: center;
-    text-align: center;
-    justify-content: space-between;
+    justify-content: center;
     display: flex;
     font-family: Roboto, san-serif;
-    background: rgba(0,0,0,0.5);
+    background: rgb(255, 0, 0);
     width: 100%;
+    padding: 0 5%;
+    gap: 50px;
 }
 
-.logo{
-    font-family: var(--fonte5);
-    font-weight: 900px;
-    height: 200px;
-    font-style: italic;
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.logo img{
+    height: 90px;
+    width: 140px;
     display: flex;
     color: red;
-    align-items: center;
-    padding-left: 15%;
+    align-items: center;   
+}
+
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 nav ul{
@@ -65,9 +70,37 @@ a{
     color: aliceblue;
 }
 
+.bts{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+/*
 button{
     background-color: black;
     color: white;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 7px;
+    padding: 10px 15px;
 }
+*/
+
+
+
+.cadastro{
+    font-size: 15px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: 1s background;
+}
+
+.cadastro:hover{
+    background-color: #333;
+    transition: 1s background;
+}
+
