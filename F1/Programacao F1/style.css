@@ -1,12 +1,24 @@
+/*Fontes Importadas*/
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');      /*Poppins*/
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');      /*Kanit*/
 
+
+
+
+/*Atalho das fontes*/
 
 
 :root{
     --fonte1: "Roboto", serif;
     --fonte2: "Kanit", serif;
 }
+
+
+
+
+/*Definições padrão do corpo do site*/
 
 
 *{
@@ -26,6 +38,12 @@ body{
     background-color: grey;
 }
 
+
+
+
+/*Cabecalho*/
+
+
 header{ 
     position: fixed;
     height: 150px;
@@ -37,6 +55,17 @@ header{
     width: 100%;
     padding: 0 5%;
     gap: 50px;
+}
+
+
+
+
+/*Icone de usuario*/
+
+
+.login i{
+    font-size: 24px;
+    margin-right: 15px;
 }
 
 .logo {
@@ -57,6 +86,8 @@ nav {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    font-family: var(--fonte2);
+    font-size: 17px;
 }
 
 nav ul{
@@ -64,43 +95,135 @@ nav ul{
     gap: 30px;
 }
 
+ul li a {
+    transition: .2s;
+    display: block;
+    position: relative;
+   
+}
+
 a{
     text-align: center;
     align-items: center;
     color: aliceblue;
+    padding: 5px;
 }
 
 .bts{
     display: flex;
     align-items: center;
-    gap: 15px;
     margin-left: auto;
 }
 
-/*
-button{
-    background-color: black;
-    color: white;
-    border-radius: 7px;
-    padding: 10px 15px;
-}
-*/
-
-
-
-.cadastro{
-    font-size: 15px;
+.bts button {
     border: none;
-    padding: 10px 15px;
-    border-radius: 7px;
-    color: white;
-    background-color: black;
+    padding: 12px 20px;
+    border-radius: 8px;
+    line-height: 40px;
+    font-family: var(--fonte2);
     cursor: pointer;
-    transition: 1s background;
+    transition: 0.3s ease-in-out;
+    background-color: transparent;
 }
 
-.cadastro:hover{
-    background-color: #333;
-    transition: 1s background;
+.bts .login {
+    background-color: #ff1e1e; 
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+    padding: 8px 15px;
+    font-size: 16px;
 }
 
+.bts .cadastro {
+    border-radius: 7px;
+    font-size: 17px;
+    padding: 7px 10px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+
+#menu-icon{
+    font-size: 38px;
+    color: black;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/* Pseudo-Classes*/
+
+
+ul:hover li a{
+    opacity: 3;
+}
+
+ul li a:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.bts .login:hover {
+    background-color: #420f0f; 
+    transition: .4s;
+}
+
+.bts .cadastro:hover {
+    background-color: #302f2f; 
+    transition: .5s;
+}
+
+
+ul li a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: -1;
+    border-radius: 8px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: .2s;
+}
+
+ul li a:hover::before{
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform .2s;
+}
+
+
+
+
+
+
+
+
+
+
+/*Responsividade*/
+
+
+@media (max-widght: 1280px){
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    nav ul a {
+        padding: 5px 0;
+        margin: 0px 20px;
+    }
+}
