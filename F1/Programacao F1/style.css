@@ -46,9 +46,10 @@ body{
 .img-inicio img {
     max-width: 100%;
     height: auto;
-    
     background-size: cover;
 }
+
+
 
 
 /*Cabecalho*/
@@ -170,14 +171,35 @@ a{
     color: white;
     background-color: black; 
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    text-align: center; /* Centraliza o texto dentro do elemento */
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
 }
 
 .text-noti{
     border: 3px solid green;
-    max-width: 80%; /* Evita que o texto ocupe toda a largura da tela */
+    max-width: 80%; 
+    height: 75%;
+    width: 65%;
+}
+
+
+
+
+/*Rodape*/
+
+
+.rodape{
+    height: 200px;
+    display: flex;
+    background-color: #302f2f;
+}
+
+.rodape, h2{
+    color: aqua;
+    align-items: center;
+    text-align: center;
+   justify-content: center;
 }
 
 
