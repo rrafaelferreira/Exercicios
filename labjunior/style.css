@@ -10,8 +10,8 @@
   }
   
   header {
-    background-color: #333;
-    color: #fff;
+    background-color: #1D5902;
+    color: #ffffff;
     padding: 1rem 0;
   }
   
@@ -32,13 +32,14 @@
   .menu {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
   }
   
   .menu a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
   }
   
   .menu a:hover {
@@ -49,8 +50,8 @@
     width: 100%;
     min-height: 80vh; /* Altura mínima de 80% da tela */
     padding: 60px 20px;
-    background: rgb(85, 82, 82);
-    border-bottom: 1px solid #ccc;
+    background: white;
+    border-bottom: 4px solid #ccc;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centraliza verticalmente */
@@ -74,8 +75,106 @@
     padding: 1rem;
     margin-top: 40px;
   }
+  
+  /*Secao Inicio*/
 
-  h2, p, li {
-    color: white;
+  #inicio {
+    position: relative;
+    background-color: white;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  
+  #inicio::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: gray;
+    clip-path: polygon(0% 100%, 90% 0%, 100% 0%, 100% 100%);
+    z-index: 0;
+  }
+  
+  #inicio h2,
+  #inicio p {
+    position: relative;
+    z-index: 1;
+    color: black;
+    max-width: 700px;
+    padding: 1rem;
+  }
+
+  /*Secao Sobre nos*/
+  
+  #sobre {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 650px; 
+  }
+  
+  .quadrado {
+    position: relative;
+    width: 1800px;
+    height: 700px;
+    border-radius: 1%; 
+    padding: 40px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background-color: transparent; 
+    box-sizing: border-box;
+    z-index: 1;
+  }
+    
+  /*Secao Servicos*/
+
+  #servicos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    padding: 60px 20px;
+    border-bottom: 4px solid #ccc;
+  }
+  
+  #servicos h2 {
+    text-align: center;
+    margin-bottom: 120px;
+  }
+  
+  #servicos .cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 400px;
+    max-width: 1000px;
+  }
+  
+  #servicos .card {
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 250px;
+    max-width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  
+  #servicos .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+  
+  
   
