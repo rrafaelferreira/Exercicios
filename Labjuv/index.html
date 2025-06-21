@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meu Site</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <!--Menu de navegação-->
 
   <header>
     <nav>
@@ -22,42 +20,45 @@
     </nav>
   </header>
 
-  <!--Secoes-->
-
   <main>
-
-
-    <!--Inicio-->
-
-
     <section id="inicio" class="secao">
-        <h2>Bem-vindo ao Meu Site</h2>
-        <p>Esta é a seção inicial do nosso site. Aqui você encontra as principais informações.</p>
-      </section>
-      
-      <!--Sobre Nos-->
+  <div class="inicio-container">
+    <div class="inicio-texto">
+      <h2>Descubra Como <br> Ser mais Saudável!</h2> <br>
+      <p>A seguir iremos te apresentar algumas dicas para uma melhor alimentação</p>
+    </div>
+  </div>
+</section>
 
 
-      <section id="sobre" class="secao">
-        <div class="quadrado">
-          <h2>Sobre Nós</h2>
-          <p>Somos uma empresa dedicada a oferecer soluções digitais para o seu negócio.</p>
-        </div>
-      </section>
-      
+    <section id="sobre" class="secao">
+      <div class="quadrado">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma empresa dedicada a oferecer soluções digitais para o seu negócio.</p>
 
-      <!--Servicos-->
+        <h3>Calculadora de IMC e Consumo de Água</h3>
+        <form id="calculadora">
+          <label for="peso">Peso (kg):</label><br />
+          <input type="number" id="peso" name="peso" required /><br /><br />
 
+          <label for="altura">Altura (m):</label><br />
+          <input type="number" id="altura" name="altura" step="0.01" required /><br /><br />
 
-      <section id="servicos" class="secao">
-        <h2>Lorem</h2>
-        <div class="cards">
-          <div class="card">Lorem</div>
-          <div class="card">Lorem</div>
-          <div class="card">Lorem</div>
-        </div>
-      </section>
-      
+          <button type="submit">Calcular</button>
+        </form>
+
+        <div id="resultado" style="margin-top:20px; font-weight:bold;"></div>
+      </div>
+    </section>
+
+    <section id="servicos" class="secao">
+      <h2>Lorem</h2>
+      <div class="cards">
+        <div class="card">Lorem</div>
+        <div class="card">Lorem</div>
+        <div class="card">Lorem</div>
+      </div>
+    </section>
 
     <section id="contato" class="secao">
       <h2>Fale Conosco</h2>
@@ -69,5 +70,6 @@
     <p>&copy; 2025 LabJuv.</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
