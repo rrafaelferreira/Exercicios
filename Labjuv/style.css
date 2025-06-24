@@ -21,12 +21,11 @@ header {
 
 nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   max-width: 1200px;
   height: 80px;
   margin: 0 auto;
-  padding: 0 20px;
+  
 }
 
 .logo {
@@ -36,14 +35,16 @@ nav {
 .menu {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 30px;
+  
+  align-items: center;
 }
 
 .menu a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .menu a:hover {
@@ -54,7 +55,7 @@ nav {
   width: 100%;
   min-height: 80vh;
   padding: 60px 20px;
-  background: white;
+  background: gray;
   /* border-bottom: 4px solid #ccc; */
   display: flex;
   flex-direction: column;
@@ -104,7 +105,7 @@ footer {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* escurece o fundo */
+  background-color: rgba(0, 0, 0, 0.6); /* escurece o fundo */
   z-index: 0;
 }
 
@@ -128,17 +129,40 @@ footer {
 
 .inicio-texto {
   text-align: center;
-  color: rgb(184, 214, 13);
+  color: rgb(255, 255, 255);
   max-width: 800px;
 }
 
+.inicio-texto .texto{
+  font-size: 20px;
+}
+
 .inicio-texto h2 {
-  font-size: 2.5rem;
+  font-size: 4.4rem;
   margin-bottom: 20px;
 }
 
 
-/* Seção SOBRE */
+/* Seção Sobre Nos*/
+
+#nos {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.3rem;
+  padding-bottom: 50px;
+}
+ 
+#nos p {
+  font-size: 20px;
+}
+
+
+/* Seção Calculadora */
+
 #sobre {
   position: relative;
   display: flex;
@@ -153,13 +177,14 @@ footer {
   max-width: 900px;
   border-radius: 1%;
   padding: 40px;
-  border: 2px solid rgba(0, 0, 0, 0.3);
   background-color: transparent;
   box-sizing: border-box;
   z-index: 1;
 }
 
+
 /* Formulário da calculadora */
+
 #calculadora input,
 #calculadora button {
   padding: 10px;
@@ -180,7 +205,66 @@ footer {
   background-color: #144102;
 }
 
+
+/*Seção Informações*/
+
+#info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  padding: 60px 20px;
+  border-bottom: 4px solid #ccc;
+  background-color: gray; 
+  transition: background-color 1.5s ease; 
+}
+
+#info .textoinfo{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#info .cards {
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  grid-auto-rows: auto;   /* Altura flexível para cada card */
+  justify-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+#info .card {
+  background-color: gray;
+  border: 0px solid transparent;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1 1 250px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 8px 15px rgba(0,0,0,1.9);
+  font-size: 1.2rem;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 1.5s ease;
+  cursor: default;
+}
+
+#info .card.ativo {
+  background-color: white;
+  color: #333;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+#info .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+
 /* Seção SERVIÇOS */
+
 #servicos {
   display: flex;
   flex-direction: column;
@@ -201,7 +285,6 @@ footer {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  height: 400px;
   max-width: 1000px;
 }
 
