@@ -6,8 +6,10 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
+  background-color: #f4f7f8;
+  color: #333;
 }
 
 header {
@@ -59,17 +61,27 @@ nav {
   flex-direction: column;
   justify-content: center;
   background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 40px auto;
 }
 
 .secao h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #1D5902;
+  text-align: center;
+  font-weight: 700;
 }
 
 .secao p,
 .secao ul {
   font-size: 1.1rem;
   max-width: 800px;
+  margin: 0 auto 15px;
+  text-align: center;
+  color: #555;
 }
 
 footer {
@@ -144,13 +156,16 @@ footer {
 h3 {
   font-size: 2.3rem;
   padding-bottom: 50px;
+  color: #1D5902;
+  font-weight: 700;
 }
 
 #nos p {
   font-size: 20px;
+  color: #555;
 }
 
-/* Seção Calculadora */
+/* Seção Calculadora (modificada para visual melhor) */
 
 #sobre {
   position: relative;
@@ -158,19 +173,117 @@ h3 {
   justify-content: center;
   align-items: center;
   min-height: 650px;
+  background: #e9f1de;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(29, 89, 2, 0.15);
+  padding: 60px 30px;
+  margin: 40px auto;
+  max-width: 900px;
+  flex-direction: column;
+  text-align: center;
 }
 
 .quadrado {
-  position: relative;
   width: 100%;
-  max-width: 900px;
-  border-radius: 1%;
-  padding: 40px;
-  background-color: transparent;
-  box-sizing: border-box;
-  z-index: 1;
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 4px 25px rgba(29, 89, 2, 0.1);
+  transition: box-shadow 0.3s ease;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
+.quadrado:hover {
+  box-shadow: 0 8px 35px rgba(29, 89, 2, 0.3);
+}
+
+.quadrado h2 {
+  font-size: 2.5rem;
+  color: #1D5902;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.quadrado p {
+  font-size: 1.15rem;
+  color: #4a4a4a;
+  margin-bottom: 35px;
+  line-height: 1.5;
+}
+
+/* Formulário da calculadora estilizado */
+
+#calculadora {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+#calculadora label {
+  font-weight: 600;
+  color: #1D5902;
+  font-size: 1.1rem;
+  align-self: flex-start;
+}
+
+#calculadora input {
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 320px;
+  border: 2px solid #b0c88d;
+  border-radius: 12px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  color: #333;
+}
+
+#calculadora input:focus {
+  border-color: #1D5902;
+  box-shadow: 0 0 8px rgba(29, 89, 2, 0.5);
+  outline: none;
+}
+
+#calculadora button {
+  background-color: #1D5902;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(29, 89, 2, 0.3);
+  font-family: inherit;
+}
+
+#calculadora button:hover {
+  background-color: #144102;
+  box-shadow: 0 6px 20px rgba(20, 65, 2, 0.5);
+}
+
+/* Resultado */
+
+#resultado {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #1D5902;
+  min-height: 40px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #d9f0c9;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(29, 89, 2, 0.15);
+  transition: background-color 0.3s ease;
+}
 
 /* Seção Informações */
 
@@ -227,14 +340,14 @@ h3 {
   align-items: center;
   min-height: 80vh;
   padding: 60px 20px;
-  
 }
 
 .carrossel {
+  width: 90vw;
+  max-width: 1600px;
+  min-height: 700px;
   display: flex;
   align-items: center;
-  width: 1400px;
-  height: 1200px;
   position: relative;
 }
 
@@ -247,8 +360,8 @@ h3 {
   padding: 20px;
   flex-grow: 1;
   align-items: center;
+  height: 600px;
   transition: opacity 0.5s ease-in-out;
-  min-height: 450px;
 }
 
 .carrossel-conteudo.ativo {
@@ -256,15 +369,21 @@ h3 {
 }
 
 .carrossel-imagem {
-  width: 50%;
-  max-width: 700px;
+  padding-top: 240px;
+  padding-left: 150px;
+  width: 60%;
+  max-width: 900px;
+  height: 600px;
   border-radius: 8px;
   object-fit: cover;
 }
 
 .carrossel-texto {
-  width: 50%;
+  width: 40%;
   padding-left: 40px;
+  padding-top: 180px;
+  height: 600px;
+  overflow-y: auto;
 }
 
 .carrossel-texto h3 {
@@ -291,7 +410,6 @@ h3 {
   color: #144102;
 }
 
-
 /* Formulário da calculadora */
 
 #calculadora input,
@@ -301,128 +419,44 @@ h3 {
   width: 100%;
   max-width: 300px;
   margin-bottom: 10px;
-}
-
-#calculadora button {
-  background-color: #1D5902;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#calculadora button:hover {
-  background-color: #144102;
+  align-items: center;
+  text-align: center;
 }
 
 /* Para mobile, a imagem fica em cima e texto embaixo */
 @media (max-width: 768px) {
   .carrossel-conteudo {
     flex-direction: column;
+    height: auto;
   }
-  .carrossel-imagem, .carrossel-texto {
+
+  .carrossel-imagem,
+  .carrossel-texto {
     width: 100%;
-  }
-  .carrossel-imagem {
-    margin-bottom: 15px;
-  }
-}
-
-/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
-
-/* Para telas até 1024px (tablets e pequenos desktops) */
-@media (max-width: 1024px) {
-  nav {
-    height: auto;
-    padding: 10px 20px;
-  }
-
-  .menu {
-    gap: 15px;
-    font-size: 18px;
-  }
-
-  #inform .cards {
-    grid-template-columns: 1fr 1fr;
-    max-width: 100%;
-    gap: 15px;
-  }
-
-  #servicos .cards {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-/* Para telas até 768px (tablets e celulares grandes) */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  nav {
-    height: auto;
-  }
-
-  #inicio .inicio-texto h2 {
-    font-size: 3rem;
-  }
-
-  #inform .cards {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-  }
-
-  #servicos .cards {
-    flex-direction: column;
-    max-width: 100%;
-  }
-
-  #servicos .card {
-    max-width: 100%;
-    margin-bottom: 15px;
-  }
-
-  #sobre .quadrado {
     padding: 20px;
-    max-width: 90%;
+    height: auto;
+  }
+}
+
+/* Responsividade para seção calculadora */
+@media (max-width: 480px) {
+  #sobre {
+    padding: 40px 15px;
+    min-height: auto;
+  }
+
+  .quadrado {
+    padding: 30px 25px;
   }
 
   #calculadora input,
   #calculadora button {
     max-width: 100%;
   }
-}
 
-/* Para telas até 480px (celulares pequenos) */
-@media (max-width: 480px) {
-  #inicio .inicio-texto h2 {
-    font-size: 2.2rem;
-  }
-
-  #inicio .inicio-texto .texto {
-    font-size: 16px;
-  }
-
-  header {
-    position: relative;
-    padding: 10px 0;
-  }
-
-  .menu {
-    font-size: 16px;
-    gap: 8px;
-  }
-
-  #inform .card,
-  #servicos .card {
-    font-size: 1rem;
-    min-height: auto;
-    padding: 15px;
-  }
-
-  .secao {
-    padding: 30px 10px;
+  #resultado {
+    max-width: 100%;
+    font-size: 1.1rem;
+    padding: 12px 15px;
   }
 }
