@@ -56,10 +56,16 @@ nav {
   min-height: 80vh;
   padding: 60px 20px;
   background: gray;
-  /* border-bottom: 4px solid #ccc; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #333;
+  transition: background-color 1.5s ease;
+}
+
+.secao.ativa,
+.secao.hover{
+  background-color: #f0f0f0;
 }
 
 .secao h2 {
@@ -215,7 +221,7 @@ h3 {
   min-height: 80vh;
   padding: 60px 20px;
   border-bottom: 4px solid #ccc;
-  background-color: gray; 
+  background-color: #333; 
   transition: background-color 1.5s ease; 
 }
 
