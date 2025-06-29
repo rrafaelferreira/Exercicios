@@ -1,3 +1,4 @@
+/* RESET E ESTILOS GERAIS */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +26,6 @@ nav {
   max-width: 1200px;
   height: 80px;
   margin: 0 auto;
-  
 }
 
 .logo {
@@ -36,7 +36,6 @@ nav {
   list-style: none;
   display: flex;
   gap: 30px;
-  
   align-items: center;
 }
 
@@ -55,17 +54,11 @@ nav {
   width: 100%;
   min-height: 80vh;
   padding: 60px 20px;
-  background: gray;
+  background: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #333;
-  transition: background-color 1.5s ease;
-}
-
-.secao.ativa,
-.secao.hover{
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .secao h2 {
@@ -86,7 +79,6 @@ footer {
   padding: 1rem;
   margin-top: 40px;
 }
-
 
 /* Seção INICIO */
 
@@ -111,27 +103,20 @@ footer {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* escurece o fundo */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
 
 .inicio-container {
   position: relative;
   z-index: 1;
-}
-
-
-.inicio-container {
   display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;     
-  height: 50%;            
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
   text-align: center;
-  position: relative;
-  z-index: 1;
 }
-
 
 .inicio-texto {
   text-align: center;
@@ -139,7 +124,7 @@ footer {
   max-width: 800px;
 }
 
-.inicio-texto .texto{
+.inicio-texto .texto {
   font-size: 20px;
 }
 
@@ -148,8 +133,7 @@ footer {
   margin-bottom: 20px;
 }
 
-
-/* Seção Sobre Nos*/
+/* Seção Sobre Nós */
 
 #nos {
   align-items: center;
@@ -161,11 +145,10 @@ h3 {
   font-size: 2.3rem;
   padding-bottom: 50px;
 }
- 
+
 #nos p {
   font-size: 20px;
 }
-
 
 /* Seção Calculadora */
 
@@ -186,6 +169,126 @@ h3 {
   background-color: transparent;
   box-sizing: border-box;
   z-index: 1;
+}
+
+
+/* Seção Informações */
+
+#inform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  padding: 60px 20px;
+  background-color: #ffffff;
+  transition: background-color 1.5s ease;
+}
+
+#inform h2 {
+  color: white;
+  margin-bottom: 40px;
+}
+
+#inform .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+#inform .card {
+  background-color: gray;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 180px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#inform .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  color: #333;
+}
+
+/* Seção Serviços */
+
+#servicos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  padding: 60px 20px;
+  
+}
+
+.carrossel {
+  display: flex;
+  align-items: center;
+  width: 1400px;
+  height: 1200px;
+  position: relative;
+}
+
+.carrossel-conteudo {
+  display: none; /* Oculta todos os slides inicialmente */
+  gap: 20px;
+  background: #f9f9f9;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  flex-grow: 1;
+  align-items: center;
+  transition: opacity 0.5s ease-in-out;
+  min-height: 450px;
+}
+
+.carrossel-conteudo.ativo {
+  display: flex; /* Exibe apenas o slide ativo */
+}
+
+.carrossel-imagem {
+  width: 50%;
+  max-width: 700px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.carrossel-texto {
+  width: 50%;
+  padding-left: 40px;
+}
+
+.carrossel-texto h3 {
+  margin-bottom: 10px;
+}
+
+.carrossel-texto p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Botões do carrossel */
+.btn-prev, .btn-next {
+  background-color: transparent;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #1D5902;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.btn-prev:hover, .btn-next:hover {
+  color: #144102;
 }
 
 
@@ -211,104 +314,115 @@ h3 {
   background-color: #144102;
 }
 
-
-/*Seção Informações*/
-
-#info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 80vh;
-  padding: 60px 20px;
-  border-bottom: 4px solid #ccc;
-  background-color: #333; 
-  transition: background-color 1.5s ease; 
+/* Para mobile, a imagem fica em cima e texto embaixo */
+@media (max-width: 768px) {
+  .carrossel-conteudo {
+    flex-direction: column;
+  }
+  .carrossel-imagem, .carrossel-texto {
+    width: 100%;
+  }
+  .carrossel-imagem {
+    margin-bottom: 15px;
+  }
 }
 
-#info .textoinfo{
-  display: flex;
-  justify-content: center;
-  text-align: center;
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
+
+/* Para telas até 1024px (tablets e pequenos desktops) */
+@media (max-width: 1024px) {
+  nav {
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .menu {
+    gap: 15px;
+    font-size: 18px;
+  }
+
+  #inform .cards {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    gap: 15px;
+  }
+
+  #servicos .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
-#info .cards {
-  padding-top: 60px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-  grid-auto-rows: auto;   /* Altura flexível para cada card */
-  justify-items: center;
-  gap: 20px;
-  width: 100%;
-  max-width: 1000px;
+/* Para telas até 768px (tablets e celulares grandes) */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  nav {
+    height: auto;
+  }
+
+  #inicio .inicio-texto h2 {
+    font-size: 3rem;
+  }
+
+  #inform .cards {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  #servicos .cards {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  #servicos .card {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  #sobre .quadrado {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  #calculadora input,
+  #calculadora button {
+    max-width: 100%;
+  }
 }
 
-#info .card {
-  background-color: gray;
-  border: 0px solid transparent;
-  border-radius: 8px;
-  padding: 20px;
-  flex: 1 1 250px;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 8px 15px rgba(0,0,0,1.9);
-  font-size: 1.2rem;
-  text-align: center;
-  transition: transform 0.3s ease, background-color 1.5s ease;
-  cursor: default;
-}
+/* Para telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  #inicio .inicio-texto h2 {
+    font-size: 2.2rem;
+  }
 
-#info .card.ativo {
-  background-color: white;
-  color: #333;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
+  #inicio .inicio-texto .texto {
+    font-size: 16px;
+  }
 
-#info .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
+  header {
+    position: relative;
+    padding: 10px 0;
+  }
 
+  .menu {
+    font-size: 16px;
+    gap: 8px;
+  }
 
-/* Seção SERVIÇOS */
+  #inform .card,
+  #servicos .card {
+    font-size: 1rem;
+    min-height: auto;
+    padding: 15px;
+  }
 
-#servicos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 80vh;
-  padding: 60px 20px;
-  border-bottom: 4px solid #ccc;
-}
-
-#servicos h2 {
-  text-align: center;
-  margin-bottom: 120px;
-}
-
-#servicos .cards {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1000px;
-}
-
-#servicos .card {
-  background-color: #f9f9f9;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  flex: 1 1 250px;
-  max-width: 300px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  font-size: 1.2rem;
-  text-align: center;
-  transition: transform 0.3s ease;
-  cursor: default;
-}
-
-#servicos .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  .secao {
+    padding: 30px 10px;
+  }
 }
