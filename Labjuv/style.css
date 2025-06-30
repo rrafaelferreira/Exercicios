@@ -6,10 +6,8 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f7f8;
-  color: #333;
 }
 
 header {
@@ -61,27 +59,17 @@ nav {
   flex-direction: column;
   justify-content: center;
   background-color: #ffffff;
-  box-shadow: 0 0 15px rgba(0,0,0,0.05);
-  border-radius: 12px;
-  max-width: 1000px;
-  margin: 40px auto;
 }
 
 .secao h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #1D5902;
-  text-align: center;
-  font-weight: 700;
 }
 
 .secao p,
 .secao ul {
   font-size: 1.1rem;
   max-width: 800px;
-  margin: 0 auto 15px;
-  text-align: center;
-  color: #555;
 }
 
 footer {
@@ -156,16 +144,13 @@ footer {
 h3 {
   font-size: 2.3rem;
   padding-bottom: 50px;
-  color: #1D5902;
-  font-weight: 700;
 }
 
 #nos p {
   font-size: 20px;
-  color: #555;
 }
 
-/* Seção Calculadora (modificada para visual melhor) */
+/* Seção Calculadora */
 
 #sobre {
   position: relative;
@@ -173,117 +158,19 @@ h3 {
   justify-content: center;
   align-items: center;
   min-height: 650px;
-  background: #e9f1de;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(29, 89, 2, 0.15);
-  padding: 60px 30px;
-  margin: 40px auto;
-  max-width: 900px;
-  flex-direction: column;
-  text-align: center;
 }
 
 .quadrado {
+  position: relative;
   width: 100%;
-  background: #ffffff;
-  padding: 40px 50px;
-  border-radius: 16px;
-  box-shadow: 0 4px 25px rgba(29, 89, 2, 0.1);
-  transition: box-shadow 0.3s ease;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 900px;
+  border-radius: 1%;
+  padding: 40px;
+  background-color: transparent;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
-.quadrado:hover {
-  box-shadow: 0 8px 35px rgba(29, 89, 2, 0.3);
-}
-
-.quadrado h2 {
-  font-size: 2.5rem;
-  color: #1D5902;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-.quadrado p {
-  font-size: 1.15rem;
-  color: #4a4a4a;
-  margin-bottom: 35px;
-  line-height: 1.5;
-}
-
-/* Formulário da calculadora estilizado */
-
-#calculadora {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  align-items: center;
-}
-
-#calculadora label {
-  font-weight: 600;
-  color: #1D5902;
-  font-size: 1.1rem;
-  align-self: flex-start;
-}
-
-#calculadora input {
-  padding: 12px 15px;
-  font-size: 1.1rem;
-  width: 100%;
-  max-width: 320px;
-  border: 2px solid #b0c88d;
-  border-radius: 12px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  font-family: inherit;
-  color: #333;
-}
-
-#calculadora input:focus {
-  border-color: #1D5902;
-  box-shadow: 0 0 8px rgba(29, 89, 2, 0.5);
-  outline: none;
-}
-
-#calculadora button {
-  background-color: #1D5902;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  padding: 14px 40px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  cursor: pointer;
-  width: 100%;
-  max-width: 320px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(29, 89, 2, 0.3);
-  font-family: inherit;
-}
-
-#calculadora button:hover {
-  background-color: #144102;
-  box-shadow: 0 6px 20px rgba(20, 65, 2, 0.5);
-}
-
-/* Resultado */
-
-#resultado {
-  margin-top: 30px;
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: #1D5902;
-  min-height: 40px;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
-  background: #d9f0c9;
-  padding: 15px 20px;
-  border-radius: 12px;
-  box-shadow: inset 0 0 10px rgba(29, 89, 2, 0.15);
-  transition: background-color 0.3s ease;
-}
 
 /* Seção Informações */
 
@@ -340,6 +227,7 @@ h3 {
   align-items: center;
   min-height: 80vh;
   padding: 60px 20px;
+  
 }
 
 .carrossel {
@@ -410,8 +298,128 @@ h3 {
   color: #144102;
 }
 
+
 /* Formulário da calculadora */
 
+/* Estilização aprimorada para a seção da calculadora */
+#sobre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 650px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #dff3e3 0%, #a8d5a3 100%);
+  /* leve gradiente verde claro para conforto visual */
+}
+
+.quadrado {
+  background-color: #ffffffdd; /* branco semi-transparente para destaque */
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-width: 600px;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #144102;
+  transition: transform 0.3s ease;
+}
+
+.quadrado:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+.quadrado h2 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #1d5902;
+  text-align: center;
+}
+
+.quadrado p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #3b6620;
+}
+
+/* Formulário */
+#calculadora {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+#calculadora label {
+  align-self: flex-start;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #2f4d09;
+}
+
+#calculadora input[type="number"] {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 2px solid #a8d5a3;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease;
+}
+
+#calculadora input[type="number"]:focus {
+  outline: none;
+  border-color: #1d5902;
+  box-shadow: 0 0 8px #b7e6a4;
+}
+
+#calculadora button {
+  width: 100%;
+  max-width: 320px;
+  background-color: #1d5902;
+  color: white;
+  font-size: 1.25rem;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(29, 89, 2, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#calculadora button:hover {
+  background-color: #144102;
+  box-shadow: 0 8px 20px rgba(20, 64, 1, 0.6);
+}
+
+/* Resultado */
+#resultado {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #255d00;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .quadrado {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  #calculadora input[type="number"],
+  #calculadora button {
+    max-width: 100%;
+  }
+}
+
+/*
 #calculadora input,
 #calculadora button {
   padding: 10px;
@@ -423,40 +431,127 @@ h3 {
   text-align: center;
 }
 
+#calculadora button {
+  background-color: #1D5902;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#calculadora button:hover {
+  background-color: #144102;
+}*/
+
+
 /* Para mobile, a imagem fica em cima e texto embaixo */
 @media (max-width: 768px) {
   .carrossel-conteudo {
     flex-direction: column;
-    height: auto;
   }
-
-  .carrossel-imagem,
-  .carrossel-texto {
+  .carrossel-imagem, .carrossel-texto {
     width: 100%;
-    padding: 20px;
-    height: auto;
+  }
+  .carrossel-imagem {
+    margin-bottom: 15px;
   }
 }
 
-/* Responsividade para seção calculadora */
-@media (max-width: 480px) {
-  #sobre {
-    padding: 40px 15px;
-    min-height: auto;
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
+
+/* Para telas até 1024px (tablets e pequenos desktops) */
+@media (max-width: 1024px) {
+  nav {
+    height: auto;
+    padding: 10px 20px;
   }
 
-  .quadrado {
-    padding: 30px 25px;
+  .menu {
+    gap: 15px;
+    font-size: 18px;
+  }
+
+  #inform .cards {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    gap: 15px;
+  }
+
+  #servicos .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Para telas até 768px (tablets e celulares grandes) */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  nav {
+    height: auto;
+  }
+
+  #inicio .inicio-texto h2 {
+    font-size: 3rem;
+  }
+
+  #inform .cards {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  #servicos .cards {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  #servicos .card {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  #sobre .quadrado {
+    padding: 20px;
+    max-width: 90%;
   }
 
   #calculadora input,
   #calculadora button {
     max-width: 100%;
   }
+}
 
-  #resultado {
-    max-width: 100%;
-    font-size: 1.1rem;
-    padding: 12px 15px;
+/* Para telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  #inicio .inicio-texto h2 {
+    font-size: 2.2rem;
+  }
+
+  #inicio .inicio-texto .texto {
+    font-size: 16px;
+  }
+
+  header {
+    position: relative;
+    padding: 10px 0;
+  }
+
+  .menu {
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  #inform .card,
+  #servicos .card {
+    font-size: 1rem;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .secao {
+    padding: 30px 10px;
   }
 }
