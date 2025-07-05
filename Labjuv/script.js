@@ -49,4 +49,4 @@ updateSlideVisibility();
 setInterval(() => {
   slideIndex = (slideIndex + 1) % totalSlides;
   updateSlideVisibility();
-}, 5000); // Troca a cada 5 segundos
+}, 995000); // Troca a cada 5 segundos
