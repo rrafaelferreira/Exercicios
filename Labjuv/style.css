@@ -461,12 +461,19 @@ h3 {
 
 /*Receitas*/
 
+#receitas{
+  background-color: rgb(189, 174, 174);
+}
+
+
+
  #receitas .cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   width: 100%;
   max-width: 600px;
+  background-color: red;
 }
 
 #receitas .card {
@@ -490,6 +497,7 @@ h3 {
   background-color: #ccc;
   color: #333;
 }
+  
 
 /* Seção Calculadora */
 
