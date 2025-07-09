@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <title>Meu Site</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -12,14 +13,16 @@
     <nav>
       <ul class="menu">
         <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#nos">Sobre</a></li>
+        <li><a href="#trocas">Trocas Inteligentes</a></li>
+        <li><a href="#receitas">Receitas</a></li>
       </ul>
     </nav>
   </header>
 
+
   <!-- Seção Início -->
+
   <main>
     <section id="inicio" class="secao">
       <div class="inicio-container">
@@ -31,7 +34,9 @@
       </div>
     </section>
 
+
     <!-- Sobre Nós -->
+
     <section id="nos" class="secao">
       <div class="texto-nos">
         <h3>Sobre Nós</h3>
@@ -42,30 +47,36 @@
 
     <!--Secao Categoria de Alimentos-->
 
-    <section id="alimentos" class="secao">
-      <h2>Categoria de Alimentos</h2>
+    <section id="categorialimentos" class="secao">
+      <h2 class="titulocategoria">Categoria de Alimentos</h2>
 
       <div class="abertura"><p class="txalimentos">Os alimentos in natura e minimamente processados são aqueles obtidos diretamente 
-da natureza, das plantas ou dos animais, sem sofrerem alterações. Os alimentos minimamente 
-processados passam por alguma modificação, como limpeza, secagem, fermentação, 
-pasteurização, refrigeração, congelamento ou outros processos que levam à adição de sal, 
-açúcar, óleos, gorduras ou qualquer outra substância ao alimento original.</p></div>
-
+        da natureza, das plantas ou dos animais, sem sofrerem alterações. Os alimentos minimamente 
+        processados passam por alguma modificação, como limpeza, secagem, fermentação, 
+        pasteurização, refrigeração, congelamento ou outros processos que levam à adição de sal, 
+        açúcar, óleos, gorduras ou qualquer outra substância ao alimento original.
+      </p>
+    </div>
       <div class="inatura"><p class="textoalimentos">Os alimentos in natura e minimamente processados são aqueles obtidos diretamente 
-da natureza, das plantas ou dos animais, sem sofrerem alterações. Os alimentos minimamente 
-processados passam por alguma modificação, como limpeza, secagem, fermentação, 
-pasteurização, refrigeração, congelamento ou outros processos que levam à adição de sal, 
-açúcar, óleos, gorduras ou qualquer outra substância ao alimento original.</p> </div>
-<div class="processados"><p class="textoalimentos">Os alimentos processados são fabricados pela indústria, com a adição de sal ou açúcar 
-e outros ingredientes a alimentos in natura para torná-los duráveis e mais agradáveis ao paladar. 
-Exemplos: palmito e outros vegetais em conserva, sardinhas enlatadas, frutas em calda e 
-queijos, pães feitos com farinha de trigo, leveduras, água e sal.</p>  </div>
-<div class="ultraprocessados"><p class="textoalimentos">Os alimentos ultraprocessados são formulações industriais prontas para consumo, 
-feitas com ingredientes com nomes pouco familiares e não usados em casa 
-(carboximetilcelulose, açúcar invertido, maltodextrina, frutose, xarope de milho, 
-aromatizantes, emulsificantes, espessantes, adoçantes, entre outros). Exemplos: salgadinhos de 
-pacote, refrigerantes e bebidas adoçadas, macarrão instantâneo, biscoitos recheados e 
-chocolate. </p>
+        da natureza, das plantas ou dos animais, sem sofrerem alterações. Os alimentos minimamente 
+        processados passam por alguma modificação, como limpeza, secagem, fermentação, 
+        pasteurização, refrigeração, congelamento ou outros processos que levam à adição de sal, 
+        açúcar, óleos, gorduras ou qualquer outra substância ao alimento original.
+      </p> 
+    </div>
+      <div class="processados"><p class="textoalimentos">Os alimentos processados são fabricados pela indústria, com a adição de sal ou açúcar 
+        e outros ingredientes a alimentos in natura para torná-los duráveis e mais agradáveis ao paladar. 
+        Exemplos: palmito e outros vegetais em conserva, sardinhas enlatadas, frutas em calda e 
+        queijos, pães feitos com farinha de trigo, leveduras, água e sal.
+      </p>  
+    </div>
+      <div class="ultraprocessados"><p class="textoalimentos">Os alimentos ultraprocessados são formulações industriais prontas para consumo, 
+        feitas com ingredientes com nomes pouco familiares e não usados em casa 
+        (carboximetilcelulose, açúcar invertido, maltodextrina, frutose, xarope de milho, 
+        aromatizantes, emulsificantes, espessantes, adoçantes, entre outros). Exemplos: salgadinhos de 
+        pacote, refrigerantes e bebidas adoçadas, macarrão instantâneo, biscoitos recheados e 
+        chocolate. 
+      </p>
  </div>
 
     </section>
@@ -79,9 +90,11 @@ chocolate. </p>
     </section>
   -->
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <!-- Serviços -->
 
-    <section id="servicos" class="secao">
+
+    <!-- Trocas Inteligentes -->
+
+    <!-- <section id="trocas" class="secao">
   <div class="carrossel">
     <button class="btn-prev">&#10094;</button>
 
@@ -123,43 +136,140 @@ chocolate. </p>
     <button class="btn-next">&#10095;</button>
   </div>
 
-</section>
+</section> -->
+
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
 
 <br><br><br>
 
- <!-- <section id="inform" class="secao">
-      <p class="textoinfo">Alimentação Saudável se baseia em uma escolha balanceada de alimentos. Mais in natura e menos ultraprocessados. Para evitar um aumento de gordura corporal não basta apenas comer menos, comendo pouco, porém mal, é o suficiente para uma má alimentação somada com problemas de saúde. Ultraprocessados como refrigerantes, biscoitos recheados e salgadinhos são suficientes para uma injeção altamente calórica no corpo.</p>
-
-    <div class="caixa1">
-      <p class="conteudo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam maxime hic consequuntur rerum reprehenderit dignissimos facilis suscipit, ipsa nostrum, fugit dolorem, beatae itaque recusandae? Et provident aspernatur totam. Quis, a.
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, enim. Quod sequi veritatis quis inventore sapiente nulla modi officiis quasi sunt voluptas facilis, porro autem rem minus aliquam! Officia, nulla!Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam inventore voluptate quam aspernatur debitis dicta officia illum omnis labore, autem, esse praesentium, soluta fugit quisquam rerum dolores aperiam error facilis. 
-      </p>
-    </div>
-
-     <div class="caixa2">
-      <p class="conteudo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam maxime hic consequuntur rerum reprehenderit dignissimos facilis suscipit, ipsa nostrum, fugit dolorem, beatae itaque recusandae? Et provident aspernatur totam. Quis, a.
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, enim. Quod sequi veritatis quis inventore sapiente nulla modi officiis quasi sunt voluptas facilis, porro autem rem minus aliquam! Officia, nulla!Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam inventore voluptate quam aspernatur debitis dicta officia illum omnis labore, autem, esse praesentium, soluta fugit quisquam rerum dolores aperiam error facilis. 
-      </p>
-    </div>
-
-
-    </section> -->
 
 
 <!--Reiceitas-->
 
 <section id="receitas" class="secao">
-  <div class="cards">
+    <h2 class="tituloreceitas">Receitas Saudáveis</h2>
+
+  <!--Cafe da Manha-->
+  <div class="refeicao">
+    
+        <h3 class="titulorefeicao">Cafe da Manha</h3> 
+        <div class="cards">
           <div class="card">
-            <p class="texto1">Limite a ingestão de gorduras saturadas</p>
+            <p class="textocards">Limite a ingestão de gorduras saturadas</p>
           </div>
           <div class="card">
-            <p class="texto2">Reduza a ingestão de açúcares</p>
+            <p class="textocards">Reduza a ingestão de açúcares</p>
           </div>
           <div class="card">
-            <p class="texto3">Invista em alimentos naturais como frutas, verduras e legumes</p>
+            <p class="textocards">Invista em alimentos naturais como frutas, verduras e legumes</p>
           </div>
+          <div class="card">
+            <p class="textocards">Reduza a ingestão de açúcares</p>
+          </div>  
+        </div>
   </div>
+    
+  <!--Almço-->
+  <div class="refeicao">
+    
+        <h3 class="titulorefeicao">Almoço</h3> 
+        <div class="cards">
+          <div class="card">
+            <p class="textocards">Limite a ingestão de gorduras saturadas</p>
+          </div>
+          <div class="card">
+            <p class="textocards">Reduza a ingestão de açúcares</p>
+          </div>
+          <div class="card">
+            <p class="textocards">Invista em alimentos naturais como frutas, verduras e legumes</p>
+          </div>
+          <div class="card">
+            <p class="textocards">Reduza a ingestão de açúcares</p>
+          </div>
+        </div>
+  </div>
+  
+
+ <!--Lanche-->
+  <div class="refeicao">
+    <!--Lanche-->
+        <h3 class="titulorefeicao">Lanche</h3>
+        <div class="cards">
+          <div class="card">
+            <p class="textocards">Limite a ingestão de gorduras saturadas</p>
+          </div>
+          <div class="card">
+            <p class="textocards">Reduza a ingestão de açúcares</p>
+          </div>
+          <div class="card">
+            <p class="textocards">Invista em alimentos naturais como frutas, verduras e legumes</p>
+          </div>
+          <div class="card">
+            <p class="textocards">Reduza a ingestão de açúcares</p>
+          </div>     
+        </div>
+    </div>
+  
+
+  <!--Jantar-->
+  <div class="refeicao">
+        <h3 class="titulorefeicao">Janta</h3>
+        <div class="cards">
+          <div class="card">
+            <p class="textocards">Limite a ingestão de gorduras saturadas</p>
+          </div>
+          <div class="card">
+            <p class="textocards">Reduza a ingestão de açúcares</p>
+          </div>
+          <div class="card">
+            <p class="textocards">Invista em alimentos naturais como frutas, verduras e legumes</p>
+          </div>
+          <div class="card">
+            <p class="textocards">Reduza a ingestão de açúcares</p>
+          </div>
+        </div>
+  </div>
+  
 </section>
 
 <!-- Seção Calculo -->  
@@ -185,6 +295,7 @@ chocolate. </p>
     </section>
 
     <!-- Contato (Opcional) -->
+
     <section id="contato" class="secao">
       <h2>Contato</h2>
       <p>Entre em contato conosco para mais informações.</p>
@@ -197,8 +308,13 @@ chocolate. </p>
     <p>&copy; 2025 LabJuv.</p>
   </footer>
 
+
+
   <!-- JavaScript -->
+
   <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
 
 </body>
 </html>
