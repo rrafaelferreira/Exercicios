@@ -95,6 +95,16 @@ function updateSlideVisibility() {
 // Inicializa o carrossel mostrando apenas o primeiro slide
 updateSlideVisibility();
 
+
+
+
+
+
+
+
+
+
+
 // Carrossel automático
 setInterval(() => {
   slideIndex = (slideIndex + 1) % totalSlides;
@@ -102,30 +112,17 @@ setInterval(() => {
 }, 995000); // Troca a cada 5 segundos
 
 
-// Modal de dicas (JS adicional)
-const botoesAbrir = document.querySelectorAll('.botao-abrir');
-const modal = document.getElementById('modal');
-const modalTitulo = document.getElementById('modalTitulo');
-const modalTexto = document.getElementById('modalTexto');
-const botaoFechar = document.querySelector('.fechar');
 
-botoesAbrir.forEach(botao => {
-  botao.addEventListener('click', () => {
-    const titulo = botao.getAttribute('data-titulo');
-    const texto = botao.getAttribute('data-texto');
 
-    modalTitulo.textContent = titulo;
-    modalTexto.textContent = texto;
-    modal.style.display = 'flex';
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      cards.forEach(c => c.classList.remove("open")); // fecha todos
+      card.classList.add("open"); // abre só este
+    });
   });
-});
-
-botaoFechar.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-
-window.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
 });
