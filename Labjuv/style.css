@@ -589,52 +589,55 @@ h3 {
 
 /*Receitas*/
 
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ 
+  min-height: 700px;
 
-
-
-
-
-.card-group {
-  display: flex;
-  gap: 20px;
+  /* Alinhamento vertical e horizontal */
+  place-items: center; /* centraliza vertical e horizontal */
 }
 
 .card {
-  background-color: #ddd;
-  width: 150px;
-  border: 1px solid #000;
+  background: #ddd;
+  width: 200px;
   cursor: pointer;
-  transition: all 0.3s ease;
   overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.card-img {
-  width: 100%;
+.image {
   height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
   background-color: #ccc;
+}
+
+.content {
+  padding: 10px;
   text-align: center;
-  font-weight: bold;
-  line-height: 150px;
+  flex-grow: 1;
 }
 
-.card-title {
-  padding: 10px;
-  font-weight: bold;
-  border-top: 2px solid black;
-}
-
-.card-info {
-  padding: 10px;
-  height: 0;
-  opacity: 0;
-  transition: all 0.3s ease;
+.description {
+  max-height: 0;
   overflow: hidden;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: max-height 0.4s ease;
 }
 
-.card.open .card-info {
-  height: auto;
-  opacity: 1;
-  padding: 10px;
+.card.open .description {
+  max-height: 100px; /* altura suficiente para o conteúdo expandir */
 }
 
 
