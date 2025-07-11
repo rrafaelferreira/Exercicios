@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>Meu Site</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -27,7 +28,7 @@
     <section id="inicio" class="secao">
       <div class="inicio-container">
         <div class="inicio-texto">
-          <h2>Bem-Vindo</h2><br>
+          <h2 class="texto-meio-inicio">Bem-Vindo</h2><br>
           <p class="texto">Descubra Como ser mais Saudável!</p>
           <p class="texto">A seguir iremos te apresentar algumas dicas para uma melhor alimentação</p>
         </div>
@@ -36,16 +37,20 @@
 
 
     <!-- Sobre Nós -->
+<section id="nos" class="secao">
+  <div class="container-nos">
+    <div class="texto-nos">
+      <h3>Sobre Nós</h3>
+      <p>Somos um grupo de estudantes apaixonados por saúde e bem-estar, e criamos este site com o objetivo de compartilhar informações simples, confiáveis e acessíveis sobre alimentação saudável. Acreditamos que comer bem é um passo importante para viver melhor, e queremos ajudar outras pessoas a fazerem escolhas conscientes no dia a dia.</p>
+    </div>
+    <div class="imagem-nos">
+      <img src="./imagen/turma.jpg" alt="Imagem sobre saúde e bem-estar">
+    </div>
+  </div>
+</section>
 
-    <section id="nos" class="secao">
-      <div class="texto-nos">
-        <h3>Sobre Nós</h3>
-        <p>Somos um grupo de estudantes apaixonados por saúde e bem-estar, e criamos este site com o objetivo de compartilhar informações simples, confiáveis e acessíveis sobre alimentação saudável.  Acreditamos que comer bem é um passo importante para viver melhor, e queremos ajudar outras pessoas a fazerem escolhas conscientes no dia a dia.</p>
-      </div>
-    </section>
 
-
-    <!--Secao Categoria de Alimentos-->
+    <!-- Secao Categoria de Alimentos
 
     <section id="categorialimentos" class="secao">
       <h2 class="titulocategoria">Categoria de Alimentos</h2>
@@ -79,16 +84,39 @@
       </p>
  </div>
 
-    </section>
+    </section> -->
     
 
-    <!-- Seção Informações --
 
-    <section id="inform" class="secao">
-      <h2>Categorias dos Alimentos</h2>
-      <div class="inatura">Minha ativo</div>
-    </section>
-  -->
+  <section id="categorialimentos" class="secao">
+  <h2 class="titulocategoria">Categoria de Alimentos</h2>
+
+  <div class="categoria-bloco abertura">
+    <i class="fa-solid fa-seedling icone"></i>
+    <p class="textoalimentos">Os alimentos in natura e minimamente processados são obtidos diretamente da natureza e podem passar por processos como limpeza, secagem e fermentação, sem adição de substâncias artificiais.</p>
+  </div>
+
+  <div class="categoria-bloco inatura">
+    <i class="fa-solid fa-carrot icone"></i>
+    <p class="textoalimentos">Minimamente processados mantêm a identidade do alimento original com leves alterações, como congelamento ou pasteurização. Ex: legumes lavados, carnes resfriadas, grãos secos.</p>
+  </div>
+
+  <div class="categoria-bloco processados">
+    <i class="fa-solid fa-bread-slice icone"></i>
+    <p class="textoalimentos">Alimentos processados recebem adição de sal, açúcar ou conservantes. Exemplos: queijos, pães simples, frutas em calda e vegetais em conserva.</p>
+  </div>
+
+  <div class="categoria-bloco ultraprocessados">
+    <i class="fa-solid fa-pizza-slice icone"></i>
+    <p class="textoalimentos">Ultraprocessados são formulações industriais com muitos ingredientes artificiais. Ex: refrigerantes, salgadinhos, biscoitos recheados e macarrão instantâneo.</p>
+  </div>
+</section>
+
+
+
+
+
+    
     <br><br><br><br><br><br><br>
 
 
@@ -140,152 +168,49 @@
 
 
 
-<!--Reiceitas--
+<!--Reiceitas-->
+
+
+
+
+
 
 <section id="receitas" class="secao">
-    <h2 class="tituloreceitas">Receitas Saudáveis</h2>
+  <h1 class="titulo-receitas">Receitas Saudáveis</h1>
 
-  <!-Cafe da Manha--
-  <div class="refeicao">
-    
-        <h3 class="titulorefeicao">Cafe da Manha</h3> 
-        <div class="cards">
-          <div class="card">
-            <p class="textocards">Limite a ingestão de gorduras saturadas</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Reduza a ingestão de açúcares</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Invista em alimentos naturais como frutas, verduras e legumes</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Reduza a ingestão de açúcares</p>
-          </div>  
-        </div>
+  <h2 class="subtitulo">Café da Manhã</h2>
+  <div class="container-cards">
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
   </div>
-    
-  <!-Almço--
-  <div class="refeicao">
-    
-        <h3 class="titulorefeicao">Almoço</h3> 
-        <div class="cards">
-          <div class="card">
-            <p class="textocards">Limite a ingestão de gorduras saturadas</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Reduza a ingestão de açúcares</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Invista em alimentos naturais como frutas, verduras e legumes</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Reduza a ingestão de açúcares</p>
-          </div>
-        </div>
-  </div>
-  
 
- <!-Lanche--
-  <div class="refeicao">
-    <--Lanche--
-        <h3 class="titulorefeicao">Lanche</h3>
-        <div class="cards">
-          <div class="card">
-            <p class="textocards">Limite a ingestão de gorduras saturadas</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Reduza a ingestão de açúcares</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Invista em alimentos naturais como frutas, verduras e legumes</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Reduza a ingestão de açúcares</p>
-          </div>     
-        </div>
-    </div>
-  
-
-  <!-Jantar--
-  <div class="refeicao">
-        <h3 class="titulorefeicao">Janta</h3>
-        <div class="cards">
-          <div class="card">
-            <p class="textocards">Limite a ingestão de gorduras saturadas</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Reduza a ingestão de açúcares</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Invista em alimentos naturais como frutas, verduras e legumes</p>
-          </div>
-          <div class="card">
-            <p class="textocards">Reduza a ingestão de açúcares</p>
-          </div>
-        </div>
+  <h2 class="subtitulo">Almoço</h2>
+  <div class="container-cards">
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
   </div>
-  
+
+  <h2 class="subtitulo">Lanche</h2>
+  <div class="container-cards">
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+  </div>
+
+  <h2 class="subtitulo">Jantar</h2>
+  <div class="container-cards">
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+    <div class="card"><div class="image">Imagem</div><div class="content"><div class="title">Título</div></div><div class="description">loremloremlorem lorem loremlorem</div></div>
+  </div>
 </section>
--->
-
-
-<!-- <div class="card-group">
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-body-secondary"></small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-body-secondary"></small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-body-secondary"></small></p>
-    </div>
-  </div>
-</div> -->
-
-
-
-
-<div class="container-cards">
-  <div class="card">
-    <div class="image">Imagem</div>
-    <div class="content">
-      <div class="title">Título</div>
-      <div class="description">loremloremlorem lorem loremlorem</div>
-    </div>
-  </div>
-  
-  <div class="card">
-    <div class="image">Imagem</div>
-    <div class="content">
-      <div class="title">Título</div>
-      <div class="description">loremloremlorem lorem loremlorem</div>
-    </div>
-  </div>
-  
-  <div class="card">
-    <div class="image">Imagem</div>
-    <div class="content">
-      <div class="title">Título</div>
-      <div class="description">loremloremlorem lorem loremlorem</div>
-    </div>
-  </div>
-</div>
-
+ 
 
 
 
