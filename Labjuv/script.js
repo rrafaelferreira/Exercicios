@@ -22,39 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     });
   }
-
-  // ✅ CARROSSEL DE SLIDES
-  const slides = document.querySelectorAll('.carrossel-conteudo');
-  const totalSlides = slides.length;
-  let slideIndex = 0;
-
-  const btnNext = document.querySelector('.btn-next');
-  const btnPrev = document.querySelector('.btn-prev');
-
-  function updateSlideVisibility() {
-    slides.forEach((slide, index) => {
-      slide.style.display = index === slideIndex ? 'flex' : 'none';
-    });
-  }
-
-  if (btnNext && btnPrev && totalSlides > 0) {
-    btnNext.addEventListener('click', () => {
-      slideIndex = (slideIndex + 1) % totalSlides;
-      updateSlideVisibility();
-    });
-
-    btnPrev.addEventListener('click', () => {
-      slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-      updateSlideVisibility();
-    });
-
-    updateSlideVisibility();
-
-    setInterval(() => {
-      slideIndex = (slideIndex + 1) % totalSlides;
-      updateSlideVisibility();
-    }, 5000);
-  }
+  
 
   // ✅ CARDS EXPANSÍVEIS COM TRANSIÇÃO SUAVE LENTA
   const cards = document.querySelectorAll(".card");
