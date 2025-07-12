@@ -592,15 +592,15 @@ h3 {
 }
 
 .card {
-  background-color: #f5f5f5;
+  background-color: #ebe6e6;
   width: 260px;
   max-height: 300px;
   cursor: pointer;
   overflow: hidden;
-  transition: transform 0.3s ease, max-height 0.5s ease;
+  transition: transform 0.3s ease;
   border: 1px solid #ccc;
   border-radius: 10px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow:  6px 8px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
 }
@@ -610,7 +610,7 @@ h3 {
 }
 
 .card.open {
-  max-height: 600px;
+  max-height: none;
 }
 
 .image {
@@ -619,7 +619,7 @@ h3 {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  background-color: #ccc;
+  background-color: #f0ecec;
 }
 
 .content {
@@ -633,12 +633,12 @@ h3 {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out, padding 0.4s ease-in-out;
 }
 
 .card.open .description {
   opacity: 1;
-  max-height: 250px;
+  max-height: none;
   padding: 10px;
 }
 
