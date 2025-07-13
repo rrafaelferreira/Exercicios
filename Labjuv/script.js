@@ -59,40 +59,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ✅ MENU HAMBÚRGUER RESPONSIVO
+  // ✅ MENU HAMBÚRGUER RESPONSIVO (CORRIGIDO)
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu');
+  const header = document.querySelector('header');
+  const inicioSection = document.getElementById("inicio");
 
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
+      menu.classList.toggle('menu-ativo');  // 👈 Correção feita aqui
       toggle.classList.toggle('active');
     });
 
     const links = menu.querySelectorAll('a');
     links.forEach(link => {
       link.addEventListener('click', () => {
-        menu.classList.remove('active');
+        menu.classList.remove('menu-ativo'); // 👈 Correção feita aqui também
         toggle.classList.remove('active');
       });
     });
   }
 
-  // ✅ MUDAR COR DO BOTÃO HAMBÚRGUER CONFORME A SEÇÃO
-  const inicioSection = document.getElementById("inicio");
-
+  // ✅ MUDAR ESTILO DO HEADER E BOTÃO HAMBÚRGUER CONFORME ROLAGEM
   function verificarSecaoVisivel() {
     const rect = inicioSection.getBoundingClientRect();
-    const noTopo = rect.top <= 0 && rect.bottom >= 80;
+    const estaNoTopo = rect.top <= 0 && rect.bottom >= 80;
 
-    if (noTopo) {
-      toggle.classList.add("white");
-    } else {
+    if (!estaNoTopo) {
+      header.classList.add("scrolled");
       toggle.classList.remove("white");
+    } else {
+      header.classList.remove("scrolled");
+      toggle.classList.add("white");
     }
   }
 
-  // Verificar rolagem e carregar
+  // Aciona na rolagem e no carregamento da página
   window.addEventListener("scroll", verificarSecaoVisivel);
   window.addEventListener("load", verificarSecaoVisivel);
 });
