@@ -67,7 +67,7 @@ nav {
   list-style: none;
   display: flex;
   gap: 30px;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
 .hamburguer.active span:nth-child(1) {
@@ -120,6 +120,7 @@ nav {
     display: flex;
     opacity: 1;
     transform: translate(-50%, 0);
+    height: 600px;
   }
 
   .menu li {
@@ -372,6 +373,12 @@ h3 {
   flex-wrap: wrap;
 }
 
+.titulotrocas{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
 .image-side {
   flex: 1;
   display: flex;
@@ -591,6 +598,17 @@ h3 {
   padding: 10px;
 }
 
+/*Tabela Nutricional*/
+
+#tabelanutricional{
+  height: auto;
+}
+
+.textonutri{
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
 
 
 /* Seção Calculadora */
