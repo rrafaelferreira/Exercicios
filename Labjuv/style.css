@@ -26,9 +26,10 @@ header {
 nav {
   display: flex;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 1900px;
   height: 80px;
   margin: 0 auto;
+  align-items: center ;
 }
 
 /* === MENU HAMBÚRGUER (GERAL) === */
@@ -76,7 +77,8 @@ nav {
   list-style: none;
   display: flex;
   gap: 30px;
-  padding-top: 30px;
+  padding-top: 0;
+  align-items: center;
 }
 
 .menu a {
