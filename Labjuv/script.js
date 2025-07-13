@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ CARDS EXPANSÍVEIS COM TRANSIÇÃO SUAVE LENTA
+  // ✅ CARDS EXPANSÍVEIS COM TRANSIÇÃO SUAVE
   const cards = document.querySelectorAll(".card");
   let currentOpenCard = null;
 
@@ -66,14 +66,33 @@ document.addEventListener("DOMContentLoaded", () => {
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
       menu.classList.toggle('active');
+      toggle.classList.toggle('active');
     });
 
-    // Fecha o menu ao clicar em algum link (UX melhor no mobile)
     const links = menu.querySelectorAll('a');
     links.forEach(link => {
       link.addEventListener('click', () => {
         menu.classList.remove('active');
+        toggle.classList.remove('active');
       });
     });
   }
+
+  // ✅ MUDAR COR DO BOTÃO HAMBÚRGUER CONFORME A SEÇÃO
+  const inicioSection = document.getElementById("inicio");
+
+  function verificarSecaoVisivel() {
+    const rect = inicioSection.getBoundingClientRect();
+    const noTopo = rect.top <= 0 && rect.bottom >= 80;
+
+    if (noTopo) {
+      toggle.classList.add("white");
+    } else {
+      toggle.classList.remove("white");
+    }
+  }
+
+  // Verificar rolagem e carregar
+  window.addEventListener("scroll", verificarSecaoVisivel);
+  window.addEventListener("load", verificarSecaoVisivel);
 });
