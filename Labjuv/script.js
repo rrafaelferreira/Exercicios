@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     });
   }
-  
 
   // ✅ CARDS EXPANSÍVEIS COM TRANSIÇÃO SUAVE LENTA
   const cards = document.querySelectorAll(".card");
@@ -34,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     card.addEventListener("click", () => {
       const isSameCard = card === currentOpenCard;
 
-      // Se for o mesmo, apenas fecha
       if (isSameCard) {
         card.classList.remove("open");
         desc.style.maxHeight = "0px";
@@ -42,25 +40,40 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Se há outro aberto, fecha ele primeiro
       if (currentOpenCard) {
         const prevDesc = currentOpenCard.querySelector(".description");
         currentOpenCard.classList.remove("open");
         prevDesc.style.maxHeight = "0px";
 
-        // Espera a transição de fechamento terminar (CSS: 0.6s)
         prevDesc.addEventListener("transitionend", function abrirNovo() {
           prevDesc.removeEventListener("transitionend", abrirNovo);
           card.classList.add("open");
-          desc.style.maxHeight = desc.scrollHeight + 40 + "px"; // margem extra suave
+          desc.style.maxHeight = desc.scrollHeight + 40 + "px";
           currentOpenCard = card;
         });
       } else {
-        // Nenhum aberto, abre direto
         card.classList.add("open");
         desc.style.maxHeight = desc.scrollHeight + 40 + "px";
         currentOpenCard = card;
       }
     });
   });
+
+  // ✅ MENU HAMBÚRGUER RESPONSIVO
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // Fecha o menu ao clicar em algum link (UX melhor no mobile)
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+      });
+    });
+  }
 });

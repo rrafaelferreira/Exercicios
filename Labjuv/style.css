@@ -31,10 +31,18 @@ nav {
   margin: 0 auto;
 }
 
-.logo {
-  font-size: 1.5rem;
+
+/* Estilo do botão hamburguer (visível só no mobile) */
+.hamburguer {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
+/* Menu padrão (desktop) */
 .menu {
   list-style: none;
   display: flex;
@@ -53,16 +61,9 @@ nav {
   text-decoration: underline;
 }
 
-/* .secao {
-  width: 100%;
-  min-height: 80vh;
-  padding: 60px 20px;
-  background: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #ffffff;
-} */
+
+
+/*secao*/
 
 .secao {
   width: 100%;
@@ -75,7 +76,6 @@ nav {
   align-items: center;
 }
 
-
 .secao h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -87,13 +87,7 @@ nav {
   max-width: 800px;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 40px;
-}
+
 
 
 
@@ -271,41 +265,6 @@ h3 {
   align-self: center;
 }
 
-/* Responsividade total */
-@media (max-width: 768px) {
-  .categoria-bloco {
-    width: 80%;
-    margin-top: 120px;
-  }
-}
-
-@media (max-width: 480px) {
-  .categoria-bloco {
-    width: 90%;
-    margin-top: 100px;
-    padding: 15px 20px;
-  }
-  .textoalimentos {
-    font-size: 1rem;
-  }
-  .icone {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .categoria-bloco {
-    width: 95%;
-    margin-top: 80px;
-  }
-  .textoalimentos {
-    font-size: 0.95rem;
-  }
-  .titulocategoria {
-    font-size: 2rem;
-  }
-}
-
 
 
 /* Botões do carrossel */
@@ -355,44 +314,18 @@ h3 {
   margin-top: 10px;
 }
 
-/* Responsividade opcional */
-@media (max-width: 768px) {
-  .comparison-slide {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .item-image {
-    max-height: 150px;
-  }
-
-  .img-ajustada-coca-zero {
-    max-height: 170px;
-  }
-
-  .img-ajustada-chocolate-leite {
-    max-height: 140px;
-  }
-}
-
-
-
-
-
-
-
 
 
 /* Formulário da calculadora */
 /* Estilização aprimorada para a seção da calculadora */
 
-#sobre {
+#calculomc {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 650px;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #dff3e3 0%, #a8d5a3 100%);
+  background-color: rgb(207, 207, 207);
   /* leve gradiente verde claro para conforto visual */
 }
 
@@ -406,11 +339,6 @@ h3 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #144102;
   transition: transform 0.3s ease;
-}
-
-.quadrado:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
 }
 
 .quadrado h2 {
@@ -482,68 +410,6 @@ h3 {
 #calculadora button:hover {
   background-color: #144102;
   box-shadow: 0 8px 20px rgba(20, 64, 1, 0.6);
-}
-
-/*Secao Informacoes*/
-
-/*
-#inform .textoinfo{
-  font-size: 20px;
-  width: 90%;
-  margin-top: 200px;
-  max-width: 1200px;
-} 
-
-#inform {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 80vh;
-  background-color: #d8dbd8;
-  /* background-color: #f2f1f1; *
-  transition: background-color 1.5s ease;
-  text-align: center;
-  height: 2000px;
-  justify-content: space-between;
-  overflow-x: hidden;
-  padding: 0;
-  height: 1300px;
-}
-
-.caixa1, .caixa2{
-  height: 280px;
-  width: 55%;
-  background-color: #666;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  padding-top: 35px;
-}
-
-.caixa1{
-  align-self: flex-end;
-}
-
-.caixa2{
-  align-self: flex-start;
-}
-
-/
-*/
-
-
-
-
-
-
-
-/*Carrossel*/
-
-.image1{
-  background-size: cover;
-  height: 300px;
 }
 
 
@@ -633,32 +499,6 @@ h3 {
   padding: 10px;
 }
 
-@media (max-width: 768px) {
-  .card {
-    width: 45%;
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    width: 100%;
-  }
-
-  .titulo-receitas {
-    font-size: 2rem;
-  }
-
-  .subtitulo {
-    font-size: 1.5rem;
-  }
-}
-
-
-
-
-
-
-
 
 
 /* Seção Calculadora */
@@ -703,6 +543,15 @@ h3 {
   text-align: center;
 }
 
+/*Rodape*/
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 40px;
+}
 
 
 /* Responsividade */
@@ -744,30 +593,6 @@ h3 {
   }
 }
 
-/*
-#calculadora input,
-#calculadora button {
-  padding: 10px;
-  font-size: 1rem;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 10px;
-  align-items: center;
-  text-align: center;
-}
-
-#calculadora button {
-  background-color: #1D5902;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#calculadora button:hover {
-  background-color: #144102;
-}*/
-
-
 /* Para mobile, a imagem fica em cima e texto embaixo */
 @media (max-width: 768px) {
   .carrossel-conteudo {
@@ -808,8 +633,40 @@ h3 {
 }
 
 
+/* Responsividade total */
+@media (max-width: 768px) {
+  .categoria-bloco {
+    width: 80%;
+    margin-top: 120px;
+  }
+}
 
+@media (max-width: 480px) {
+  .categoria-bloco {
+    width: 90%;
+    margin-top: 100px;
+    padding: 15px 20px;
+  }
+  .textoalimentos {
+    font-size: 1rem;
+  }
+  .icone {
+    font-size: 2rem;
+  }
+}
 
+@media (max-width: 360px) {
+  .categoria-bloco {
+    width: 95%;
+    margin-top: 80px;
+  }
+  .textoalimentos {
+    font-size: 0.95rem;
+  }
+  .titulocategoria {
+    font-size: 2rem;
+  }
+}
 
 
 /* Para telas até 768px (tablets e celulares grandes) */
@@ -854,7 +711,77 @@ h3 {
   }
 };
 
+/* Responsividade a partir de 768px para baixo */
+@media (max-width: 768px) {
+  .hamburguer {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    z-index: 11;
+  }
 
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 20px;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+}
+
+
+/* Responsividade opcional */
+@media (max-width: 768px) {
+  .comparison-slide {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .item-image {
+    max-height: 150px;
+  }
+
+  .img-ajustada-coca-zero {
+    max-height: 170px;
+  }
+
+  .img-ajustada-chocolate-leite {
+    max-height: 140px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+
+  .titulo-receitas {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1.5rem;
+  }
+}
 
 
 /*1030*/
