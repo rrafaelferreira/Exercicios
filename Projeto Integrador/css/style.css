@@ -1,0 +1,1355 @@
+/* Fontes Importadas */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Science+Gothic:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* === RESET & BASE === */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --laranja: #ff9900;
+  --vermelho: #F50C00;
+  --amarelo: #ffb700;
+  --fontprimaria: "Montserrat", sans-serif;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h4 {
+  font-size: 30px;
+  color: #000;
+}
+
+/* === HEADER GERAL === */
+
+
+header {
+  background-color: transparent;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1110;
+  transition: background-color .4s, box-shadow .4s;
+}
+
+nav {
+  display: flex;
+
+  /* centraliza verticalmente a UL */
+  align-items: center;
+
+  justify-content: center;
+  max-width: 1900px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+/* === MENU HAMBÚRGUER (GERAL) === */
+
+
+.hamburguer {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  width: 30px;
+  height: 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 20;
+  background: none;
+  border: none;
+}
+
+.hamburguer span {
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.hamburguer.white span {
+  background-color: white;
+}
+
+.hamburguer.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburguer.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguer.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* === MENU DESKTOP === */
+
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform .4s;
+}
+
+.menu a:hover {
+  color: var(--laranja);
+}
+
+
+
+/* CENTRALIZA A UL APENAS NO DESKTOP */
+@media (min-width: 1190px) {
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+  }
+
+  .menu {
+    justify-content: center;   /* centro horizontal */
+    align-items: center;       /* centro vertical */
+    height: 100%;
+  }
+}
+
+
+/* === MENU MOBILE === */
+@media (max-width: 1189px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+    position: relative;
+  }
+
+  .hamburguer {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    gap: 15px;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu.menu-ativo {
+    display: flex;
+  }
+
+  .menu a {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .menu a:hover,
+  .menu a:active {
+    color: var(--laranja);
+  }
+}
+
+
+
+
+
+/* === HEADER AO ROLAR === */
+
+
+header.scrolled {
+  background-color: var(--amarelo);
+  transition: background-color 0.4s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Aplica links pretos no header somente no DESKTOP quando rolar */
+@media (min-width: 1190px) {
+  header.scrolled .menu a {
+    color: black;
+  }
+
+  header.scrolled .menu a:hover {
+    color: white;
+  }
+}
+
+/*secao*/
+
+
+.secao {
+  width: 100%;
+  max-width: 100vw;
+  padding: 60px 5%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.secao h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.secao p,
+.secao ul {
+  font-size: 1.1rem;
+  max-width: 800px;
+}
+
+/* Seção INICIO */
+
+
+#inicio {
+  background-image: url('../imagens/St.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  position: relative;
+}
+
+/* Sombreado escuro */
+
+
+#inicio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+/* Container do conteúdo */
+
+
+.inicio-container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Título grande */
+
+
+.inicio-texto h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+/* Subtítulo */
+
+
+.inicio-texto p {
+  font-size: 1.3rem;
+  color: rgb(230,230,230);
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+/* Destaque em amarelo */
+
+
+.inicio-texto .destaque {
+  color: var(--amarelo);
+  font-style: bold;
+}
+
+@media (max-width: 480px) {
+  .inicio-texto h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Seção Segurança do trabalho */
+
+
+#nos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  background-color: #ffffff;
+  padding: 60px 20px;
+  height: auto;
+}
+
+.container-nos {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.texto-nos {
+  flex: 1;
+  min-width: 300px;
+}
+
+.imagem-nos {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+}
+
+.imagem-nos img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+h3 {
+  font-size: 2.3rem;
+  padding-bottom: 30px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.amarelooo {
+  color: var(--amarelo);
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
+
+#nos p {
+  font-size: 20px;
+  line-height: 1.6;
+  padding: 0;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*CIPA*/
+
+
+.cipa-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.cipa-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 0;
+}
+
+.cipa-text {
+  flex: 1;
+}
+
+.cipa-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.cipa-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.cipa-text h2 {
+  font-size: 50px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.cipa-text p {
+  font-size: 1rem;
+  font-family: "Lora", serif;
+}
+
+
+/*COMITÊ*/
+
+
+.comite-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.comite-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 0;
+}
+
+.comite-row.invert {
+  flex-direction: row-reverse;
+  background: var(--amarelo);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.comite-text {
+  flex: 1;
+}
+
+.comite-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.comite-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.comite-title {
+  font-size: 40px;
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.comite-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Lora", serif;
+}
+
+@media (max-width: 768px) {
+  .cipa-row {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .cipa-image img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .comite-row,
+  .comite-row.invert {
+    flex-direction: column !important;
+    padding: 30px 20px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: center;
+  }
+
+  .comite-image img {
+    max-width: 350px !important;
+  }
+}
+
+/*icones*/
+
+
+.iconamoon--lightning-1-fill {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M14 2a1 1 0 0 0-1.864-.504l-7 12A1 1 0 0 0 6 15h4v7a1 1 0 0 0 1.864.504l7-12A1 1 0 0 0 18 9h-4z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.material-symbols--local-fire-department {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 14q0-2.625 1.25-4.675T8 5.875t2.75-2.138L12 3v3.3q0 .925.625 1.462t1.4.538q.425 0 .813-.175t.712-.575L16 7q1.8 1.05 2.9 2.912T20 14q0 2.2-1.075 4.013T16.1 20.874q.425-.6.663-1.312T17 18.05q0-1-.375-1.888t-1.075-1.587L12 11.1l-3.525 3.475q-.725.725-1.1 1.6T7 18.05q0 .8.238 1.513t.662 1.312q-1.75-1.05-2.825-2.863T4 14m8-.1l2.125 2.075q.425.425.65.95T15 18.05q0 1.225-.875 2.088T12 21t-2.125-.862T9 18.05q0-.575.225-1.112t.65-.963z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.material-symbols--falling {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m13.5 22.5l-2-.4l.8-4.3l-3.6-2.7l-1.3-5.7l-2.2 1.9l.8 3.8l-2 .4l-1-4.9l4.45-3.975q.575-.5 1.363-.412t1.512.387q.8.35 1.663.5t1.737.025t1.613-.575t1.412-1L18 7.1q-.75.575-1.55 1.075t-1.725.775q-.825.225-1.662.238T11.4 9l.7 3.1l3.7-.7l5.2 3.7l-1.2 1.6l-4.3-3l-3.6.7l2.7 2zM8 5.5q-.825 0-1.412-.587T6 3.5t.588-1.412T8 1.5t1.413.588T10 3.5t-.587 1.413T8 5.5'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.material-symbols--masks {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 18q-.95 0-1.838-.262t-1.637-.763q-1.1-.075-2.25-.475t-2.1-1.325t-1.562-2.425T2 9v-.5q0-1.05.725-1.775T4.5 6q.975 0 1.688.675T6.975 8.3q.7-.2 1.25-.5t1.125-.575q.575-.3 1.2-.512T12 6.5q.85 0 1.463.213t1.187.512q.55.275 1.113.575t1.262.5q.075-.975.788-1.638T19.5 6q1.05 0 1.775.725T22 8.5V9q0 2.25-.612 3.75t-1.563 2.425t-2.1 1.325t-2.25.475q-.75.5-1.637.763T12 18m-5.5-3.025q-.475-.75-.737-1.637T5.5 11.5v-3q0-.425-.288-.712T4.5 7.5t-.712.288T3.5 8.5V9q0 2.75.925 4.1T6.5 14.975M9 11.25q.55-.15.95-.362t.75-.413t.638-.337T12 10t.663.138t.637.337t.738.413t.962.362V10.2q-.375-.125-.65-.275l-.55-.3q-.4-.25-.813-.438T12 9t-.987.188t-.838.437l-.55.3q-.275.15-.625.275zm8.5 3.725q1.15-.525 2.075-1.875T20.5 9v-.5q0-.425-.288-.712T19.5 7.5t-.712.288t-.288.712v3q0 .95-.25 1.838t-.75 1.637'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/*CLassificações dos Alimentos*/
+
+
+#classificacoesalimentos {
+  background-image: url(./imagen/aanshul-d-XJrOFPuaUhI-unsplash.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 1400px;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#classificacoesalimentos .titulocategoria {
+ font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px; 
+}
+
+.titulocategoria {
+  color: rgb(0, 0, 0);
+  font-size: 2.5rem;
+  margin-top: 80px;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.categoria-bloco {
+  background-color: var(--amarelo);
+  width: 50%;
+  height: auto;
+  min-height: 220px;
+  margin-top: 180px;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  box-sizing: border-box;
+}
+
+.icone {
+  font-size: 2.2rem;
+    
+  margin-bottom: 15px;
+}
+
+.textoalimentos {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f7f7f7;
+}
+
+.ultraprocessados {
+  align-self: center;
+}
+
+
+
+
+
+
+
+/* Formulário da calculadora
+/* Estilização aprimorada para a seção da calculadora */
+
+#calculomc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 650px;
+  padding: 40px 20px;
+  background-color: var(--amarelo);
+  /* leve gradiente verde claro para conforto visual */
+}
+
+.quadrado {
+  background-color: var(--amarelo); /* branco semi-transparente para destaque */
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-width: 600px;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #144102;
+  transition: transform 0.3s ease;
+}
+
+.quadrado h2 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+}
+
+.quadrado p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #3b6620;
+}
+
+
+
+/* Formulário */
+
+#calculadora {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+#calculadora label {
+  align-self: flex-start;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #2f4d09;
+}
+
+#calculadora input[type="number"] {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 2px solid #a8d5a3;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease;
+}
+
+#calculadora input[type="number"]:focus {
+  outline: none;
+  border-color: #1d5902;
+  box-shadow: 0 0 8px #b7e6a4;
+}
+
+#calculadora button {
+  width: 100%;
+  max-width: 320px;
+  background-color: #1d5902;
+  color: white;
+  font-size: 1.25rem;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(29, 89, 2, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#calculadora button:hover {
+  background-color: #144102;
+  box-shadow: 0 8px 20px rgba(20, 64, 1, 0.6);
+} */
+
+
+
+
+
+
+
+
+
+
+/*NORMAS REGULAMENTADORAS*/
+
+
+#receitas{
+  background-color: rgb(255, 255, 255);
+}
+
+#receitas h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.titulo-receitas {
+  text-align: center;
+  font-size: 2.2rem;
+  margin: 60px 0 40px;
+  font-weight: bold;
+}
+
+.subtitulo {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 60px;
+  color: #333;
+  font-weight: 600;
+}
+
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 30px auto 60px;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: var(--amarelo);
+  width: 260px;
+  max-height: 300px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow:  6px 8px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card.open {
+  max-height: none;
+}
+
+.image {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color: #f0ecec;
+}
+
+.content {
+  font-weight: bold;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.description {
+  padding: 0 10px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.card.open .description {
+  opacity: 1;
+  max-height: none;
+  padding: 10px;
+}
+
+/* --- Seção Jovem Aprendiz --- */
+
+
+#tabelanutricional {
+  width: 100%;
+  padding-top: 20px;
+}
+
+#tabelanutricional h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
+
+/* Estilo dos blocos */
+
+
+.bloco {
+  background-color: var(--amarelo);
+  width: 100%;
+  padding: 40px 20px;
+  border-radius: 40px 40px 0 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Bloco 1 com borda arredondada esquerda */
+
+
+.jovem {
+  border-radius: 50px 0 0 0;
+}
+
+/* Bloco 2 com borda arredondada direita */
+
+
+.jovem2 {
+  border-radius: 0 50px 0 0;
+}
+
+.jovemtexto {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: white;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+}
+
+/* Textos */
+
+
+.textonutri,
+.textonutri2 {
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Responsividade */
+
+
+@media (max-width: 768px) {
+  .bloco {
+    border-radius: 30px 0px 0px 0px ;
+    padding: 30px 15px;
+  }
+
+  .jovemtexto {
+    font-size: 1.3rem;
+  }
+
+  .textonutri,
+  .textonutri2 {
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Seção Calculadora */
+
+#sobre {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 650px;
+}
+
+.quadrado {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 1%;
+  padding: 40px;
+  background-color: transparent;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tabela-imc {
+  width: 100%;
+  margin-top: 30px;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+}
+
+.tabela-wrapper {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 400px;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+/* =====================
+   SEÇÃO MATERIAL EDUCATIVO
+   ===================== */
+
+.material-educativo {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.videos-container {
+  width: 100%;
+  max-width: 1000px;
+  background: #ffffff20;
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.titulo-videos {
+  font-size: 45px;
+  font-family: "Bebas Neue", sans-serif;
+  margin-bottom: 30px;
+  line-height: 1;
+}
+
+/* GRID DOS VÍDEOS */
+.videos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ESTILO DOS VÍDEOS */
+.videos-grid video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+  background: #000;
+  outline: none;
+}
+
+
+
+/* -------- RESPONSIVO -------- */
+
+
+@media (max-width: 768px) {
+  .videos-grid {
+    grid-template-columns: 1fr; /* Vídeos ficam 1 por linha */
+  }
+
+  .titulo-videos {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-videos {
+    font-size: 28px;
+  }
+}
+
+
+footer {
+  background-color: black;
+  color: white;
+  justify-items: center;
+}
+
+/* CORES POR CLASSIFICAÇÃO */
+
+.magreza {
+  background-color: #ffe6e6; /* rosa claro */
+}
+
+.normal {
+  background-color: #e6ffed; /* verde claro */
+}
+
+.sobrepeso {
+  background-color: #fffbe6; /* amarelo claro */
+}
+
+.obesidade {
+  background-color: #ffe6cc; /* laranja claro */
+}
+
+.obesidade-grave {
+  background-color: #ffd6d6; /* vermelho claro */
+}
+
+/* Hover para destacar sem esconder a cor base */
+tbody tr:hover {
+  filter: brightness(0.95);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  th, td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+
+
+
+/* Responsividade */
+
+
+
+
+
+
+/*Nos*/
+
+@media (max-width: 768px) {
+  #nos h3 {
+    font-size: 2rem;
+  }
+
+  #nos p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #nos h3 {
+    font-size: 2.5rem;
+  }
+
+  #nos p {
+    font-size: 0.95rem;
+  }
+}
+
+/**/
+
+@media (max-width: 480px) {
+  .quadrado {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  #calculadora input[type="number"],
+  #calculadora button {
+    max-width: 100%;
+  }
+}
+
+/* Para mobile, a imagem fica em cima e texto embaixo */
+@media (max-width: 768px) {
+  .carrossel-conteudo {
+    flex-direction: column;
+  }
+  .carrossel-imagem, .carrossel-texto {
+    width: 100%;
+  }
+  .carrossel-imagem {
+    margin-bottom: 15px;
+  }
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
+
+/* Para telas até 1024px (tablets e pequenos desktops) */
+@media (max-width: 1024px) {
+  nav {
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .menu {
+    gap: 15px;
+    font-size: 18px;
+  }
+
+  #inform .cards {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    gap: 15px;
+  }
+
+  #servicos .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+/* Responsividade total */
+@media (max-width: 768px) {
+  .categoria-bloco {
+    width: 80%;
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoria-bloco {
+    width: 90%;
+    margin-top: 100px;
+    padding: 15px 20px;
+  }
+  .textoalimentos {
+    font-size: 1rem;
+  }
+  .icone {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .categoria-bloco {
+    width: 95%;
+    margin-top: 80px;
+  }
+  .textoalimentos {
+    font-size: 0.95rem;
+  }
+  .titulocategoria {
+    font-size: 2rem;
+  }
+}
+
+
+/* Para telas até 768px (tablets e celulares grandes) */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  nav {
+    height: auto;
+  }
+
+  #inicio .inicio-texto h2 {
+    font-size: 200px;
+  }
+
+  #inform .cards {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  #servicos .cards {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  #servicos .card {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  #sobre .quadrado {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  #calculadora input,
+  #calculadora button {
+    max-width: 100%;
+  }
+};
+
+/* Responsividade a partir de 768px para baixo */
+@media (max-width: 768px) {
+  .hamburguer {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    z-index: 11;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 20px;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+}
+
+
+/* Responsividade opcional */
+@media (max-width: 768px) {
+  .comparison-slide {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .item-image {
+    max-height: 150px;
+  }
+
+  .img-ajustada-coca-zero {
+    max-height: 170px;
+  }
+
+  .img-ajustada-chocolate-leite {
+    max-height: 140px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+
+  .titulo-receitas {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1.5rem;
+  }
+}
+
+/* Faz cada seção descer até o lugar certo sem ficar escondida pelo header */
+.secao, section {
+  scroll-margin-top: 100px; /* pode ajustar para 80–120 se quiser */
+}
