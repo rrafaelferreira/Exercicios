@@ -254,7 +254,7 @@ header.scrolled {
 
 
 #inicio {
-  background-image: url('./imagen/St.jpeg');
+  background-image: url('../imagens/St.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
