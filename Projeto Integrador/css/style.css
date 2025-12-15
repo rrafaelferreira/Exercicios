@@ -254,7 +254,7 @@ header.scrolled {
 
 
 #inicio {
-  background-image: url('../imagens/St.jpeg');
+  background-image: url('./imagen/St.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -429,12 +429,12 @@ h3 {
 }
 
 .cipa-text h2 {
-  font-size: 50px;
+  font-size: 60px;
   font-family: "Bebas Neue", sans-serif;
 }
 
 .cipa-text p {
-  font-size: 1rem;
+  font-size: 20px;
   font-family: "Lora", serif;
 }
 
@@ -484,13 +484,13 @@ h3 {
 }
 
 .comite-title {
-  font-size: 40px;
+  font-size: 70px;
   color: #fff;
   font-family: "Bebas Neue", sans-serif;
 }
 
 .comite-text p {
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 1.6;
   font-family: "Lora", serif;
 }
@@ -749,7 +749,7 @@ h3 {
 #calculadora button:hover {
   background-color: #144102;
   box-shadow: 0 8px 20px rgba(20, 64, 1, 0.6);
-} */
+} 
 
 
 
@@ -926,7 +926,7 @@ h3 {
   }
 
   .jovemtexto {
-    font-size: 1.3rem;
+    font-size: 29px;
   }
 
   .textonutri,
@@ -1144,8 +1144,6 @@ tbody tr:hover {
     font-size: 0.95rem;
   }
 }
-
-/**/
 
 @media (max-width: 480px) {
   .quadrado {
